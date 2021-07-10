@@ -105,6 +105,9 @@ p {
   height: 100%; }
 
 /*===== All Button Style =====*/
+.main-btn a{color: #ffffff}
+.main-btn a:hover{color: #00b9f1}
+
 .main-btn {
   display: inline-block;
   font-weight: 500;
@@ -115,7 +118,7 @@ p {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid #00b9f1;
+  border: 2px solid #00b9f1;
   padding: 0 40px;
   font-size: 16px;
   height: 51px;
