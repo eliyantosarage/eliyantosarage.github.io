@@ -1,150 +1,125 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Eliyanto Sarage</title>
+  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" type="image/svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <!-- Tambahkan Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #6c5ce7;
+    }
 
-    <!--====== Required meta tags ======-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      padding: 20px;
+      background: linear-gradient(145deg, #d1d9e6, #f0f0f0);
+      border-radius: 10px;
+      box-shadow: 10px 10px 20px rgba(122, 141, 174, 0.3), -10px -10px 20px rgba(255, 255, 255, 0.8);
+    }
 
-    <!--====== Title ======-->
-    <title>Eliyanto Sarage</title>
+    .header {
+      grid-column: span 3;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #333;
+    }
+    .header h1 {
+      font-weight: bold;
+      letter-spacing: 0.1em;
+    }
 
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    .footer {
+      grid-column: span 3;
+      text-align: center;
+      margin-top: 20px;
+    }
 
-    <!--====== Bootstrap css ======-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    .footer p {
+      font-size: 14px;
+      margin: 5px;
+    }
 
-    <!--====== Line Icons css ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    .footer p a {
+      text-decoration: none;
+    }
 
-    <!--====== Slick css ======-->
-    <link rel="stylesheet" href="assets/css/cb-slider.css">
-    
-    <!--====== Animate css ======-->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    .card {
+      background: linear-gradient(145deg, #d1d9e6, #f0f0f0);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 4px 4px 8px rgba(122, 141, 174, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      transition: transform 0.2s ease-in-out;
+    }
+    .card h5 a {
+      text-decoration: none;
+    }
 
-    <!--====== Default css ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-    <!--====== Style css ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    .card-title {
+      color: #333;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 2px solid #b2bec3;
+      padding-bottom: 15px;
+    }
 
-
+    .card-text {
+        font-size: 14px;
+      color: #555;
+      text-align: center;
+      padding-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
-    
-    <!--====== PRELOADER PART START ======-->
-
-    <div class="preloader">
-        <div class="loader_34">
-            <div class="ytp-spinner">
-                <div class="ytp-spinner-container">
-                    <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                        <div class="ytp-spinner-right">
-                            <div class="ytp-spinner-circle"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Daftar Project Saya</h1>
     </div>
-
-    <!--====== PRELOADER ENDS START ======-->
-
-    <!--====== HEADER PART START ======-->
-
-    <header class="header-area">
-        <ul class="cb-slideshow">
-            <li><span>Image 01</span></li>
-            <li><span>Image 02</span></li>
-            <li><span>Image 03</span></li>
-            <li><span>Image 04</span></li>
-            <li><span>Image 05</span></li>
-            <li><span>Image 06</span></li>
-        </ul>
-        <div class="header-card" >
-            <div class="header-card-wrapper wow fadeInUp" data-wow-duration="2s" data-wow-delay="1.2s">
-                <div class="card-header bg_cover" style="background-image: url(assets/images/card-bg.jpg)"></div> <!-- card-header -->
-                <div class="card-profile">
-                    <img src="assets/images/profile.jpg" alt="Profile">
-                </div> <!-- card-profile -->
-                <div class="card-content text-center">
-                    <h3 class="card-title">Eliyanto Sarage</h3>
-                    <p class="text">Jika kamu datang karena rasa penasaran terhadapku. Maka yang akan kamu temui adalah rasa kekecewaan.</p>
-                    <a href="#" class="main-btn" data-toggle="modal" data-target="#contact-modal">Hubungi Saya via WhatsApp</a>
-                </div> <!-- card-content -->
-                <div class="card-social text-center">
-                    <ul>
-                        <li><a href="https://www.facebook.com/people/Bang-EL/100047642302679" rel="nofollow"><i class="lni-facebook-filled"></i></a></li>
-                        <li><a href="#"><i class="lni-twitter-original"></i></a></li>
-                        <li><a href="https://www.instagram.com/eliyantosarage/" rel="nofollow"><i class="lni-instagram-original"></i></a></li>
-                        <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
-                    </ul>
-                    <p style="font-size: 10px;">Template by <a href="#" rel="nofollow">eliyantosarage</a></p>
-                </div> <!-- card-social -->
-            </div> <!-- header-card -->
-        </div> <!-- header-card -->
-    </header>
-
-    <!--====== HEADER PART ENDS ======-->
-
-    <!--====== MODAL CONTACT PART ENDS ======-->
-
-    <!-- Modal -->
-    <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contact-modalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="lni-close"></i>
-                </button>
-                
-                <div class="modal-body">
-                    <div class="contact-form">
-                        <form id="contact-form" action="https://api.whatsapp.com/send?phone=15672002198" method="post" data-toggle="validator">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="single-form form-group text-center">
-                                        <button type="submit" class="main-btn"><a href="https://api.whatsapp.com/send?phone=15672002198" rel="nofollow">Kirim Pesan</a></button>
-                                    </div> <!-- single form -->
-                                </div>
-                            </div> <!-- row -->
-                        </form>
-                    </div> <!-- contact form -->
-                </div>
-            </div>
-        </div>
+    <div class="card">
+      <h5 class="card-title"><a href="https://eliyantosarage.github.io/e-astekpam/">E-ASTEKPAM</a></h5>
+      <p class="card-text">Sistem elektronik untuk laporan Apel Serah Terima Regu Pengamanan. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.</p>
     </div>
+    <div class="card">
+      <h5 class="card-title">Project 2</h5>
+      <p class="card-text">Deskripsi Project 2.</p>
+    </div>
+    <div class="card">
+      <h5 class="card-title">Project 3</h5>
+      <p class="card-text">Deskripsi Project 3.</p>
+    </div>
+    <div class="footer">
+      <p class="fw-bold"><a href="https://github.com/eliyantosarage" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> eliyantosarage</a></p>
+    </div>
+  </div>
 
-    <!--====== MODAL CONTACT PART ENDS ======-->
-
-
-
-    <!--====== jquery js ======-->
-    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-
-    <!--====== Bootstrap js ======-->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-
-    <!--====== Slick js ======-->
-    <script src="assets/js/slick.min.js"></script>
-
-
-    <!--====== WOW js ======-->
-    <script src="assets/js/wow.min.js"></script>
-
-    <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>
