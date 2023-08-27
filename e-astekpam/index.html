@@ -6,7 +6,7 @@
     <meta name="description" content="E-ASTEKPAM adalah sistem elektronik untuk laporan ASTEKPAM. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.">
     <title>E-ASTEKPAM</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://sippn.menpan.go.id/images/article/large/logorutwsb1.png">
+    <link rel="icon" type="image/svg" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/github.svg">
     <!-- Tambahkan link CSS Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <!-- Tambahkan link CSS Default -->
@@ -52,15 +52,15 @@
       <form id="pengaturanPenghuniForm">
         <div class="mb-3">
           <label for="tahanan-laki" class="form-label">Tahanan Laki-Laki :</label>
-          <input type="number" id="tahanan-laki" class="form-control" value="44">
+          <input type="number" id="tahanan-laki" class="form-control" value="0">
         </div>
         <div class="mb-3">
           <label for="tahanan-perempuan" class="form-label">Tahanan Perempuan :</label>
-          <input type="number" id="tahanan-perempuan" class="form-control" value="1">
+          <input type="number" id="tahanan-perempuan" class="form-control" value="0">
         </div>
         <div class="mb-3">
           <label for="narapidana-laki" class="form-label">Narapidana Laki-Laki :</label>
-          <input type="number" id="narapidana-laki" class="form-control" value="103">
+          <input type="number" id="narapidana-laki" class="form-control" value="0">
         </div>
         <div class="mb-3">
           <label for="narapidana-perempuan" class="form-label">Narapidana Perempuan :</label>
@@ -68,7 +68,7 @@
         </div>
         <div class="mb-3">
           <label for="jumlah-dalam" class="form-label">Jumlah WBP di Dalam :</label>
-          <input type="number" id="jumlah-dalam" class="form-control" value="148">
+          <input type="number" id="jumlah-dalam" class="form-control" value="0">
         </div>
         <div class="mb-3">
           <label for="jumlah-luar" class="form-label">Jumlah WBP di Luar :</label>
@@ -76,7 +76,7 @@
         </div>
         <div class="mb-3">
           <label for="jumlah-total" class="form-label">Jumlah Total :</label>
-          <input type="number" id="jumlah-total" class="form-control" value="148">
+          <input type="number" id="jumlah-total" class="form-control" value="0">
         </div>
         <button type="button" id="simpanPengaturanPenghuni" class="btn btn-primary">Simpan</button>
       </form>
@@ -88,7 +88,7 @@
       </button>
     </div>
     <div class="container mt-4">
-      <h1 class="mt-4 text-center" style="letter-spacing: 0.05em;">RUTAN KELAS IIB WONOSOBO</h1>
+      <h1 class="mt-4 text-center" style="letter-spacing: 0.05em;">NAMA UNIT PELAKSANA TEKNIS (UPT)</h1>
       <h2 class="sub-heading">Apel Serah Terima Regu Pengamanan (ASTEKPAM)</h2>
       <p class="lead text-center"><span id="tanggalSekarang" class="lead text-center"></span> PUKUL <span id="waktu">{waktu}</span> WIB</p>
       <!-- Container untuk gambar -->
@@ -100,15 +100,15 @@
       <div class="penghuni-container">
         <div class="penghuni-item">
           <div class="penghuni-label">Tahanan Laki-Laki :</div>
-          <div class="penghuni-value">44 Orang</div>
+          <div class="penghuni-value">0 Orang</div>
         </div>
         <div class="penghuni-item">
           <div class="penghuni-label">Tahanan Perempuan :</div>
-          <div class="penghuni-value">1 Orang</div>
+          <div class="penghuni-value">0 Orang</div>
         </div>
         <div class="penghuni-item">
           <div class="penghuni-label">Narapidana Laki-Laki :</div>
-          <div class="penghuni-value">103 Orang</div>
+          <div class="penghuni-value">0 Orang</div>
         </div>
         <div class="penghuni-item">
           <div class="penghuni-label">Narapidana Perempuan :</div>
@@ -116,7 +116,7 @@
         </div>
         <div class="penghuni-item">
           <div class="penghuni-label">Jumlah WBP di Dalam :</div>
-          <div class="penghuni-value">148 Orang</div>
+          <div class="penghuni-value">0 Orang</div>
         </div>
         <div class="penghuni-item">
           <div class="penghuni-label">Jumlah WBP di Luar :</div>
@@ -124,7 +124,7 @@
         </div>
         <div class="penghuni-item">
           <div class="penghuni-label">Jumlah Total :</div>
-          <div class="penghuni-value">148 Orang</div>
+          <div class="penghuni-value">0 Orang</div>
         </div>
       </div>
       <h2 class="neumorphism bg-light mt-4 mb-4">B. Personil Pengamanan</h2>
@@ -195,20 +195,21 @@
           <div class="inventaris-value">16 Buah</div>
         </div>
       </div>
-      <p class="mt-4 text-center fw-bold" style="letter-spacing: 0.05em;">SITUASI RUTAN KELAS IIB WONOSOBO DALAM KEADAAN AMAN DAN TERKENDALI</p>
+      <p class="mt-4 text-center fw-bold" style="letter-spacing: 0.05em;">SITUASI UNIT PELAKSANA TEKNIS (UPT) DALAM KEADAAN AMAN DAN TERKENDALI</p>
       <p class="text-center fw-bold" style="letter-spacing: 0.05em;">TERIMAKASIH</p>
       <footer class="neumorphism bg-light py-3 mt-4">
         <p class="text-center mb-0">
-          Generated by <span>E-ASTEKPAM</span> | Copyright ©2023 <span class="copyright">RUTAN KELAS IIB WONOSOBO</span> - All Rights Reserved
+          Generated by <span class="copyright">E-ASTEKPAM</span> | Copyright ©2023 <span class="copyright">Eliyanto Sarage</span> - All Rights Reserved
         </p>
-        <p class="text-center mb-0 website">
-          (https://rutanwonosobo.kemenkumham.go.id/)
+        <p class="text-center mb-0 copyright website">
+          (https://eliyantosarage.github.io/)
         </p>
       </footer>
     </div>
     <!-- Tambahkan script JavaScript Bootstrap (Jika diperlukan) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+    <script src="/e-astekpam/assets/js/html2canvas.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/js/all.min.js"></script> -->
     <script src="/e-astekpam/assets/js/all.min.js"></script>
     <script>
