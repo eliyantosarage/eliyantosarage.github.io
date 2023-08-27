@@ -1,257 +1,67 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Eliyanto Sarage</title>
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/github.svg" type="image/svg" sizes="any">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-body {
-  background-color: #f0f0f0;
-  font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
-  margin: 0 auto;
-}
-
-/* Teks Link */
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #6c5ce7;
-}
-
-/* Header */
-.header {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.header h1 {
-  padding-top: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 48px;
-  color: #333;
-  margin: 0;
-}
-
-/* Container untuk Kartu */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 25px;
-}
-
-/* Kartu */
-.card {
-  flex: 0 0 calc(33.33% - 20px);
-  margin: 10px;
-  background: linear-gradient(145deg, #d1d9e6, #f0f0f0);
-  border: none;
-  border-radius: 10px;
-  box-shadow: 4px 4px 8px rgba(122, 141, 174, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  transition: transform 0.2s ease-in-out, backdrop-filter 0.5s ease-in-out;
-}
-
-/* Tambahkan efek glass saat hover */
-.card:hover {
-  transform: translateY(-5px);
-  backdrop-filter: brightness(120%) blur(10px);
-}
-
-
-.card h5 a {
-  text-decoration: none;
-}
-
-.card-title {
-  color: #333;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 2px solid #b2bec3;
-  padding-bottom: 15px;
-}
-
-.card-text {
-  font-size: 14px;
-  color: #555;
-  text-align: center;
-  padding-top: 10px;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 15px 0;
-}
-
-.footer p {
-  text-align: center;
-  margin: 0;
-}
-
-/* Icon Follow Me dengan Neumorfisme */
-.social-icons {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 24px;
-  color: #333;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  box-shadow: 
-    -3px -3px 6px rgba(255, 255, 255, 1),
-    3px 3px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-}
-
-.social-icons a:hover {
-  transform: translateY(-2px);
-}
-
-/* Warna latar belakang saat hover untuk setiap ikon */
-.social-icons a.facebook:hover {
-  background-color: #1877f2;
-  color: #fff;
-}
-
-.social-icons a.twitter:hover {
-  background-color: #1da1f2;
-  color: #fff;
-}
-
-.social-icons a.instagram:hover {
-  background-color: #e4405f;
-  color: #fff;
-}
-
-.social-icons a.github:hover {
-  background-color: #333;
-}
-
-/* Gaya tombol "Lihat Project" */
-.card a.btn {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 20px;
-  margin-top: auto; /* Membuat tombol tetap di bawah */
-  background-color: #f0f0f0;
-  color: #333;
-  text-decoration: none;
-  border-radius: 5px;
-  border: 1px solid #d1d9e6;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.card a.btn:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-2px);
-  box-shadow: 4px 4px 8px rgba(122, 141, 174, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.8);
-}
-
-.card a.btn i {
-  display: none;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  transition: opacity 0.3s ease-in-out;
-}
-
-.card a.btn:hover i {
-  display: inline-block;
-  opacity: 1;
-  margin-right: 5px;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  .card {
-    flex: 0 0 calc(50% - 20px);
-  }
-}
-
-@media (max-width: 576px) {
-  .card {
-    flex: 0 0 100%;
-    margin: 10px 0;
-  }
-}
-  </style>
-</head>
-<body>
-  <div class="header">
-    <h1>My Project</h1>
-  </div>
-
-  <div class="container">
-    <div class="card" id="card1">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Eliyanto Sarage</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/github.svg" type="image/svg" sizes="any">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+      body{background-color:#f0f0f0;font-family:'Montserrat',sans-serif;min-height:100vh;margin:0 auto}a{color:#333;text-decoration:none}a:hover{color:#6c5ce7}.header{text-align:center;padding:20px 0}.header h1{padding-top:20px;font-weight:bold;text-transform:uppercase;font-size:48px;color:#333;margin:0}.container{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;max-width:1200px;margin:0 auto;padding:25px}.card{flex:0 0 calc(33.33% - 20px);margin:10px;background:linear-gradient(145deg,#d1d9e6,#f0f0f0);border:0;border-radius:10px;box-shadow:4px 4px 8px rgba(122,141,174,0.3),-4px -4px 8px rgba(255,255,255,0.8);padding:20px;transition:transform .2s ease-in-out,backdrop-filter .5s ease-in-out}.card:hover{transform:translateY(-5px);backdrop-filter:brightness(120%) blur(10px)}.card h5 a{text-decoration:none}.card-title{color:#333;text-align:center;font-weight:bold;border-bottom:2px solid #b2bec3;padding-bottom:15px}.card-text{font-size:14px;color:#555;text-align:center;padding-top:10px}.footer{text-align:center;padding:15px 0}.footer p{text-align:center;margin:0}.social-icons{text-align:center;margin-top:20px;margin-bottom:20px}.social-icons a{display:inline-block;margin:0 10px;font-size:24px;color:#333;border-radius:50%;width:50px;height:50px;line-height:50px;text-align:center;box-shadow:-3px -3px 6px rgba(255,255,255,1),3px 3px 6px rgba(0,0,0,0.2);transition:all .2s ease-in-out}.social-icons a:hover{transform:translateY(-2px)}.social-icons a.facebook:hover{background-color:#1877f2;color:#fff}.social-icons a.twitter:hover{background-color:#1da1f2;color:#fff}.social-icons a.instagram:hover{background-color:#e4405f;color:#fff}.social-icons a.github:hover{background-color:#333}.card a.btn{display:inline-block;text-align:center;padding:10px 20px;margin-top:auto;background-color:#f0f0f0;color:#333;text-decoration:none;border-radius:5px;border:1px solid #d1d9e6;transition:background-color .3s ease-in-out,transform .2s ease-in-out,box-shadow .2s ease-in-out}.card a.btn:hover{background-color:#e0e0e0;transform:translateY(-2px);box-shadow:4px 4px 8px rgba(122,141,174,0.3),-4px -4px 8px rgba(255,255,255,0.8)}.card a.btn i{display:none;position:absolute;top:50%;right:20px;transform:translateY(-50%);transition:opacity .3s ease-in-out}.card a.btn:hover i{display:inline-block;opacity:1;margin-right:5px}@media(max-width:768px){.card{flex:0 0 calc(50% - 20px)}}@media(max-width:576px){.card{flex:0 0 100%;margin:10px 0}}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>My Project</h1>
+    </div>
+    <div class="container">
+      <div class="card" id="card1">
         <h5 class="card-title"><a href="https://eliyantosarage.github.io/e-astekpam/" target="_blank">E-ASTEKPAM</a></h5>
         <p class="card-text">Sistem elektronik untuk laporan Apel Serah Terima Regu Pengamanan. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.</p>
         <a href="https://eliyantosarage.github.io/e-astekpam/" target="_blank" class="btn">Lihat Project <i class="fas fa-arrow-right"></i></a>
       </div>
-    <div class="card" id="card2">
-      <h5 class="card-title"><a href="#" target="_blank">Project 2</a></h5>
-      <p class="card-text">Deskripsi Project 2.</p>
-      <a href="#" target="_blank" class="btn">Lihat Project <i class="fas fa-arrow-right"></i></a>
+      <div class="card" id="card2">
+        <h5 class="card-title"><a href="#" target="_blank">Project 2</a></h5>
+        <p class="card-text">Deskripsi Project 2.</p>
+        <a href="#" target="_blank" class="btn">Lihat Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="card" id="card3">
+        <h5 class="card-title"><a href="#" target="_blank">Project 3</a></h5>
+        <p class="card-text">Deskripsi Project 3.</p>
+        <a href="#" target="_blank" class="btn">Lihat Project <i class="fas fa-arrow-right"></i></a>
+      </div>
     </div>
-    <div class="card" id="card3">
-      <h5 class="card-title"><a href="#" target="_blank">Project 2</a></h5>
-      <p class="card-text">Deskripsi Project 3.</p>
-      <a href="#" target="_blank" class="btn">Lihat Project <i class="fas fa-arrow-right"></i></a>
+    <div class="footer">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/eliyantosarage0" target="_blank" rel="noopener noreferrer" class="facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/eliyantosarage_" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/eliyantosarage" target="_blank" rel="noopener noreferrer" class="github"><i class="fab fa-github"></i></a>
+      </div>
     </div>
-  </div>
-
-  <div class="footer">
-    <div class="social-icons">
-      <a href="https://www.facebook.com/eliyantosarage0" target="_blank" rel="noopener noreferrer" class="facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/eliyantosarage_" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://github.com/eliyantosarage" target="_blank" rel="noopener noreferrer" class="github"><i class="fab fa-github"></i></a>
-    </div>
-  </div>
-
-  <!-- Memuat Bootstrap JavaScript setelah Bootstrap CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-
-  <script>
-    // Fungsi untuk mengatur tinggi kartu berdasarkan kartu dengan isi terpanjang
-    function setCardHeight() {
-      const cards = document.querySelectorAll('.card');
-      let maxHeight = 0;
-
-      cards.forEach(card => {
-        const cardHeight = card.offsetHeight;
-        if (cardHeight > maxHeight) {
-          maxHeight = cardHeight;
-        }
-      });
-
-      cards.forEach(card => {
-        card.style.minHeight = `${maxHeight}px`;
-      });
-    }
-
-    // Panggil fungsi setCardHeight saat halaman dimuat
-    window.addEventListener('load', setCardHeight);
-  </script>
-</body>
+    <!-- Memuat Bootstrap JavaScript setelah Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script>
+      function setCardHeight() {
+        const cards = document.querySelectorAll('.card');
+        let maxHeight = 0;
+      
+        cards.forEach(card => {
+          const cardHeight = card.offsetHeight;
+          if (cardHeight > maxHeight) {
+            maxHeight = cardHeight;
+          }
+        });
+      
+        cards.forEach(card => {
+          card.style.minHeight = `${maxHeight}px`;
+        });
+      }
+      
+      window.addEventListener('load', setCardHeight);
+        
+    </script>
+  </body>
 </html>
