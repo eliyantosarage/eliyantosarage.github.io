@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <meta name="description" content="E-ASTEKPAM adalah sistem elektronik untuk laporan ASTEKPAM. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.">
+    <title>E-ASTEKPAM</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://sippn.menpan.go.id/images/article/large/logorutwsb1.png">
+    <!-- Tambahkan link CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- Tambahkan link CSS Default -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/css/all.min.css"> -->
+    <link href="/assets/css/all.min.css" rel="stylesheet">
+    <!-- Tambahkan link CSS Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tambahkan link Google Fonts untuk font Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Tambahkan kode CSS kustom di bawah ini -->
+  </head>
+  <body>
+    <!-- Judul di luar container -->
+    <div class="container-head text-center mt-4">
+      <h1>E-ASTEKPAM</h1>
+      <h2>Sistem elektronik untuk laporan <strong>Apel Serah Terima Regu Pengamanan</strong>. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.</h2>
+    </div>
+    <!-- Control Container -->
+    <div class="control-container">
+<!-- Judul di luar container -->
+<h2 class="neumorphism bg-primary mb-3 text-center text-light">Pengaturan</h2>
+
+<div class="grid-container">
+  <form id="jadwalForm">
+    <div class="mb-3">
+      <label for="jadwal" class="form-label">Pilih Jadwal :</label>
+      <select id="jadwal" class="form-select">
+        <option value="pagi_siang">Pagi ke Siang</option>
+        <option value="siang_malam">Siang ke Malam</option>
+        <option value="malam_pagi">Malam ke Pagi</option>
+      </select>
+      <button type="button" id="terapkanJadwal" class="btn btn-primary">Terapkan</button>
+    </div>
+  </form>
+  
+  <form id="imageForm">
+    <div class="mb-3">
+      <label for="uploadImage" class="form-label">Unggah Gambar :</label>
+      <input type="file" id="uploadImage" class="form-control">
+      <button type="button" id="uploadImageButton" class="btn btn-primary">Unggah Gambar</button>
+    </div>
+  </form>
+</div>
+
+<h2 class="neumorphism bg-primary mb-3 mt-3 text-center text-light">Pengaturan Penghuni</h2>
+      <form id="pengaturanPenghuniForm">
+        <div class="mb-3">
+          <label for="tahanan-laki" class="form-label">Tahanan Laki-Laki :</label>
+          <input type="number" id="tahanan-laki" class="form-control" value="44">
+        </div>
+        <div class="mb-3">
+          <label for="tahanan-perempuan" class="form-label">Tahanan Perempuan :</label>
+          <input type="number" id="tahanan-perempuan" class="form-control" value="1">
+        </div>
+        <div class="mb-3">
+          <label for="narapidana-laki" class="form-label">Narapidana Laki-Laki :</label>
+          <input type="number" id="narapidana-laki" class="form-control" value="103">
+        </div>
+        <div class="mb-3">
+          <label for="narapidana-perempuan" class="form-label">Narapidana Perempuan :</label>
+          <input type="number" id="narapidana-perempuan" class="form-control" value="0">
+        </div>
+        <div class="mb-3">
+          <label for="jumlah-dalam" class="form-label">Jumlah WBP di Dalam :</label>
+          <input type="number" id="jumlah-dalam" class="form-control" value="148">
+        </div>
+        <div class="mb-3">
+          <label for="jumlah-luar" class="form-label">Jumlah WBP di Luar :</label>
+          <input type="number" id="jumlah-luar" class="form-control" value="0">
+        </div>
+        <div class="mb-3">
+          <label for="jumlah-total" class="form-label">Jumlah Total :</label>
+          <input type="number" id="jumlah-total" class="form-control" value="148">
+        </div>
+        <button type="button" id="simpanPengaturanPenghuni" class="btn btn-primary">Simpan</button>
+      </form>
+    </div>
+
+    <!-- Tombol "Download Gambar" dengan desain neumorphism dan margin bawah -->
+    <div class="text-center mt-4 mb-4">
+    <button id="downloadButton" class="neumorphism-button">
+    <i class="fas fa-download"></i> DOWNLOAD ASTEKPAM
+    </button>
+    </div>
+    
+    <div class="container mt-4">
+      <h1 class="mt-4 text-center" style="letter-spacing: 0.05em;">RUTAN KELAS IIB WONOSOBO</h1>
+      <h2 class="sub-heading">Apel Serah Terima Regu Pengamanan (ASTEKPAM)</h2>
+      <p class="lead text-center"><span id="tanggalSekarang" class="lead text-center"></span> PUKUL <span id="waktu">{waktu}</span> WIB</p>
+<!-- Container untuk gambar -->
+<div id="imageContainer" style="display: none;">
+  <img id="uploadedImage" src="" alt="ASTEKPAM IMAGE">
+</div>
+      <p class="mt-4">MOHON IZIN MELAPORKAN ASTEKPAM <strong id="judulJadwal">RUPAM {SEKARANG} KE RUPAM {SELANJUTNYA}</strong> BERJALAN TERTIB DAN AMAN, DENGAN RINCIAN SEBAGAI BERIKUT :</p>
+      <h2 class="neumorphism bg-light mt-4 mb-4">A. Penghuni</h2>
+      <div class="penghuni-container">
+        <div class="penghuni-item">
+          <div class="penghuni-label">Tahanan Laki-Laki :</div>
+          <div class="penghuni-value">44 Orang</div>
+        </div>
+        <div class="penghuni-item">
+          <div class="penghuni-label">Tahanan Perempuan :</div>
+          <div class="penghuni-value">1 Orang</div>
+        </div>
+        <div class="penghuni-item">
+          <div class="penghuni-label">Narapidana Laki-Laki :</div>
+          <div class="penghuni-value">103 Orang</div>
+        </div>
+        <div class="penghuni-item">
+          <div class="penghuni-label">Narapidana Perempuan :</div>
+          <div class="penghuni-value">0 Orang</div>
+        </div>
+        <div class="penghuni-item">
+          <div class="penghuni-label">Jumlah WBP di Dalam :</div>
+          <div class="penghuni-value">148 Orang</div>
+        </div>
+        <div class="penghuni-item">
+          <div class="penghuni-label">Jumlah WBP di Luar :</div>
+          <div class="penghuni-value">0 Orang</div>
+        </div>
+        <div class="penghuni-item">
+          <div class="penghuni-label">Jumlah Total :</div>
+          <div class="penghuni-value">148 Orang</div>
+        </div>
+      </div>
+      <h2 class="neumorphism bg-light mt-4 mb-4">B. Personil Pengamanan</h2>
+      <div class="row rupam-grid">
+        <div class="col-md-12">
+          <h3 class="text-center">Regu Pengamanan {Kiri}</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> {Nama Ka. Rupam}</p>
+          <p class="fw-bold">Anggota :</p>
+          <ol>
+            <li>{Nama Anggota Satu}</li>
+            <li>{Nama Anggota Dua}</li>
+          </ol>
+          <p><span class="fw-bold">Petugas P2U :</span> {Nama Petugas P2U}</p>
+          <p><span class="fw-bold">Keterangan :</span> {Keterangan}</p>
+        </div>
+        <div class="col-md-12">
+          <h3 class="text-center">Regu Pengamanan {Kanan}</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> {Nama Ka. Rupam}</p>
+          <p class="fw-bold">Anggota :</p>
+          <ol>
+            <li>{Nama Anggota Satu}</li>
+            <li>{Nama Anggota Dua}</li>
+          </ol>
+          <p><span class="fw-bold">Petugas P2U :</span> {Nama Petugas P2U}</p>
+          <p><span class="fw-bold">Keterangan :</span> {Keterangan}</p>
+        </div>
+        <div class="col-md-12">
+            <h3 class="text-center">Petugas Piket</h3>
+            <p><span class="fw-bold">Perwira Piket :</span> {Nama Perwira Piket}</p>
+            <p><span class="fw-bold">Petugas Dapur :</span> {Nama Petugas Dapur}</p>
+            <p><span class="fw-bold">Piket Blok Wanita :</span> {Nama Piket Blok Wanita}</p>
+            <p><span class="fw-bold">Piket Staff KPR :</span> {Nama Piket Staff KPR}</p>
+            <p><span class="fw-bold">Piket Staff Siang :</span> {Nama Piket Staff Siang}</p>
+            
+        </div>
+      </div>
+      <h2 class="neumorphism bg-light mt-4 mb-4">C. Inventaris Regu Pengamanan</h2>
+      <div class="inventaris-container">
+        <div class="inventaris-item">
+          <div class="inventaris-label">Senjata Api P3A :</div>
+          <div class="inventaris-value">1 Pucuk</div>
+        </div>
+        <div class="inventaris-item">
+          <div class="inventaris-label">Amunisi P3A Karet :</div>
+          <div class="inventaris-value">10 Buah</div>
+        </div>
+        <div class="inventaris-item">
+          <div class="inventaris-label">Borgol :</div>
+          <div class="inventaris-value">2 Buah</div>
+        </div>
+        <div class="inventaris-item">
+          <div class="inventaris-label">Metal Detector :</div>
+          <div class="inventaris-value">1 Buah</div>
+        </div>
+        <div class="inventaris-item">
+          <div class="inventaris-label">HT :</div>
+          <div class="inventaris-value">6 Buah</div>
+        </div>
+        <div class="inventaris-item">
+          <div class="inventaris-label">Senter :</div>
+          <div class="inventaris-value">1 Buah</div>
+        </div>
+        <div class="inventaris-item">
+          <div class="inventaris-label">Lonceng :</div>
+          <div class="inventaris-value">5 Buah</div>
+        </div>
+        <div class="inventaris-item">
+          <div class="inventaris-label">CCTV :</div>
+          <div class="inventaris-value">16 Buah</div>
+        </div>
+      </div>
+      <p class="mt-4 text-center fw-bold" style="letter-spacing: 0.05em;">SITUASI RUTAN KELAS IIB WONOSOBO DALAM KEADAAN AMAN DAN TERKENDALI</p>
+      <p class="text-center fw-bold" style="letter-spacing: 0.05em;">TERIMAKASIH</p>
+      <footer class="neumorphism bg-light py-3 mt-4">
+        <p class="text-center mb-0">
+          Generated by <span>E-ASTEKPAM</span> | Copyright ©2023 - All Rights Reserved
+        </p>
+        <p class="text-center mb-0 website">
+          (https://rutanwonosobo.kemenkumham.go.id/)
+        </p>
+      </footer>
+    </div>
+    <!-- Tambahkan script JavaScript Bootstrap (Jika diperlukan) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/e-astekpam@main/assets/js/all.min.js"></script> -->
+    <script src="/assets/js/all.min.js"></script>
+
+  <!-- Modal Notifikasi -->
+  <div class="modal fade custom-modal" id="notificationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">E-ASTEKPAM</h5>
+              </div>
+              <div class="modal-body">
+                  <p><strong>E-ASTEKPAM</strong> adalah sebuah aplikasi sistem elektronik yang dirancang khusus untuk memudahkan proses pelaporan Apel Serah Terima Regu Pengamanan. Aplikasi ini menghadirkan kecepatan, struktur, dan akurasi dalam mencatat unit, tanggal, peralatan, serta arahan yang terkait dengan keamanan. Dengan <strong>E-ASTEKPAM</strong>, transisi keamanan menjadi lebih mudah dan efisien, memberikan kemudahan dalam mengelola dan memastikan keamanan yang optimal.</p>
+                  <p>Jika Anda tertarik untuk mendapatkan source code dari <strong>E-ASTEKPAM</strong>, silahkan hubungi <a href="mailto:officialelsa21@gmail.com" target="_blank">Developers</a>.</p>
+                  <p class="buildwith">Build with <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a> | <a href="https://html2canvas.hertzen.com/" target="_blank">html2canvas</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a></p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeNotificationModal()">Tutup</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  </body>
+</html>
