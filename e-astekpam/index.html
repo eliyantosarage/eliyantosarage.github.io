@@ -6,14 +6,13 @@
     <meta name="description" content="E-ASTEKPAM adalah sistem elektronik untuk laporan ASTEKPAM. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.">
     <title>E-ASTEKPAM</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/github.svg">
+    <link rel="icon" type="image/svg" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg">
     <!-- Tambahkan link CSS Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <!-- Tambahkan link CSS Default -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/e-astekpam/assets/css/all.min.css"> -->
     <link href="/e-astekpam/assets/css/all.min.css" rel="stylesheet">
     <!-- Tambahkan link CSS Fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/6.4.2/css/all.min.css">
     <!-- Tambahkan link Google Fonts untuk font Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Tambahkan kode CSS kustom di bawah ini -->
@@ -23,16 +22,16 @@
     <div class="container-head text-center mt-4">
       <h1>E-ASTEKPAM</h1>
       <h2>Sistem elektronik untuk laporan <strong>Apel Serah Terima Regu Pengamanan</strong>. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.</h2>
-      <button class="neumorphism-button">
+      <button class="get-source-code">
       <a href="https://github.com/eliyantosarage/e-astekpam/" target="_blank">
-      <i class="fa-solid fa-code" style="margin-right: 5px;"></i> Get Source Code
+      <i class="fa-solid fa-code"></i> Get Source Code
       </a>
       </button>
     </div>
     <!-- Control Container -->
     <div class="control-container">
       <!-- Judul di luar container -->
-      <h2 class="neumorphism bg-primary mb-3 text-center text-light">Pengaturan</h2>
+      <h2 class="neumorphism bg-dark p-3 mt-3 mb-3 text-light"><i class="fa-regular fa-gear-complex-code"></i> Pengaturan</h2>
       <div class="grid-container">
         <form id="jadwalForm">
           <div class="mb-3">
@@ -42,7 +41,8 @@
               <option value="siang_malam">Siang ke Malam</option>
               <option value="malam_pagi">Malam ke Pagi</option>
             </select>
-            <button type="button" id="terapkanJadwal" class="btn btn-primary">Terapkan</button>
+            <button type="button" id="terapkanJadwal" class="btn btn-primary">Terapkan Jadwal</button>
+            <div class="custom-notification" id="jadwalCustomNotification">Jadwal telah diterapkan!</div>
           </div>
         </form>
         <form id="imageForm">
@@ -50,10 +50,11 @@
             <label for="uploadImage" class="form-label">Unggah Gambar :</label>
             <input type="file" id="uploadImage" class="form-control">
             <button type="button" id="uploadImageButton" class="btn btn-primary">Unggah Gambar</button>
+            <div class="custom-notification" id="imageCustomNotification">Gambar telah diunggah!</div>
           </div>
         </form>
       </div>
-      <h2 class="neumorphism bg-primary mb-3 mt-3 text-center text-light">Pengaturan Penghuni</h2>
+      <h2 class="neumorphism bg-dark p-3 mb-3 mt-3 text-light"><i class="fa-regular fa-users-gear"></i> Penghuni</h2>
       <form id="pengaturanPenghuniForm">
         <div class="mb-3">
           <label for="tahanan-laki" class="form-label">Tahanan Laki-Laki :</label>
@@ -83,8 +84,95 @@
           <label for="jumlah-total" class="form-label">Jumlah Total :</label>
           <input type="number" id="jumlah-total" class="form-control" value="0">
         </div>
-        <button type="button" id="simpanPengaturanPenghuni" class="btn btn-primary">Simpan</button>
+        <button type="button" id="simpanPengaturanPenghuni" class="btn btn-primary">Terapkan Data Penghuni</button>
+        <div class="custom-notification" id="penghuniCustomNotification">Data Penghuni telah diterapkan!</div>
       </form>
+      <!-- Form Pengaturan Regu Pengamanan (Kiri) dan (Kanan) dalam satu baris -->
+      <h2 class="neumorphism bg-dark p-3 mb-3 mt-3 text-light"><i class="fa-regular fa-user-police"></i> Personil Pengamanan</h2>
+      <div class="row">
+        <!-- Form Pengaturan Regu Pengamanan (Kiri) -->
+        <div class="col-md-6">
+          <form id="pengaturanReguFormKiri">
+            <div class="mb-0">
+              <label for="reguSelectKiri" class="form-label">Pilih Regu :</label>
+              <select id="reguSelectKiri" class="form-select">
+                <option value="" disabled selected>--- Pilih Regu ---</option>
+                <option value="ReguI">Regu I</option>
+                <option value="ReguII">Regu II</option>
+                <option value="ReguIII">Regu III</option>
+                <option value="ReguIV">Regu IV</option>
+                <option value="ReguBayangan">Regu Bayangan</option>
+              </select>
+            </div>
+            <!-- Form Input Manual (Kiri) -->
+            <div id="formInputManualKiri" style="display: none;">
+              <div class="mb-0">
+                <label for="namaKaRupamKiriManual" class="form-label">Nama Ka. Rupam:</label>
+                <input type="text" class="form-control" id="namaKaRupamKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaSatuKiriManual" class="form-label">Nama Anggota Satu:</label>
+                <input type="text" class="form-control" id="anggotaSatuKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaDuaKiriManual" class="form-label">Nama Anggota Dua:</label>
+                <input type="text" class="form-control" id="anggotaDuaKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="petugasP2UKiriManual" class="form-label">Nama Petugas P2U:</label>
+                <input type="text" class="form-control" id="petugasP2UKiriManual">
+              </div>
+              <div class="mb-0">
+                <label for="keteranganKiriManual" class="form-label">Keterangan:</label>
+                <input type="text" class="form-control" id="keteranganKiriManual">
+              </div>
+            </div>
+            <button type="button" id="terapkanButtonKiri" class="btn btn-primary">Terapkan</button>
+            <div class="custom-notification" id="reguKiriCustomNotification">Regu telah diterapkan!</div>
+          </form>
+        </div>
+        <!-- Form Pengaturan Regu Pengamanan (Kanan) -->
+        <div class="col-md-6">
+          <form id="pengaturanReguFormKanan">
+            <div class="mb-0">
+              <label for="reguSelectKanan" class="form-label">Pilih Regu:</label>
+              <select id="reguSelectKanan" class="form-select">
+                <option value="" disabled selected>--- Pilih Regu ---</option>
+                <option value="ReguI">Regu I</option>
+                <option value="ReguII">Regu II</option>
+                <option value="ReguIII">Regu III</option>
+                <option value="ReguIV">Regu IV</option>
+                <option value="ReguBayangan">Regu Bayangan</option>
+              </select>
+            </div>
+            <!-- Form Input Manual (Kanan) -->
+            <div id="formInputManualKanan" style="display: none;">
+              <div class="mb-0">
+                <label for="namaKaRupamKananManual" class="form-label">Nama Ka. Rupam:</label>
+                <input type="text" class="form-control" id="namaKaRupamKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaSatuKananManual" class="form-label">Nama Anggota Satu:</label>
+                <input type="text" class="form-control" id="anggotaSatuKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="anggotaDuaKananManual" class="form-label">Nama Anggota Dua:</label>
+                <input type="text" class="form-control" id="anggotaDuaKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="petugasP2UKananManual" class="form-label">Nama Petugas P2U:</label>
+                <input type="text" class="form-control" id="petugasP2UKananManual">
+              </div>
+              <div class="mb-0">
+                <label for="keteranganKananManual" class="form-label">Keterangan:</label>
+                <input type="text" class="form-control" id="keteranganKananManual">
+              </div>
+            </div>
+            <button type="button" id="terapkanButtonKanan" class="btn btn-primary">Terapkan</button>
+            <div class="custom-notification" id="reguKananCustomNotification">Regu telah diterapkan!</div>
+          </form>
+        </div>
+      </div>
     </div>
     <!-- Tombol "Download Gambar" dengan desain neumorphism dan margin bawah -->
     <div class="text-center mt-4 mb-4">
@@ -95,12 +183,12 @@
     <div class="container mt-4">
       <h1 class="mt-4 text-center" style="letter-spacing: 0.05em;">NAMA UNIT PELAKSANA TEKNIS (UPT)</h1>
       <h2 class="sub-heading">Apel Serah Terima Regu Pengamanan (ASTEKPAM)</h2>
-      <p class="lead text-center"><span id="tanggalSekarang" class="lead text-center"></span> PUKUL <span id="waktu">{waktu}</span> WIB</p>
+      <p class="lead text-center"><span id="tanggalSekarang" class="lead text-center"></span> PUKUL <span id="waktu">waktu</span> WIB</p>
       <!-- Container untuk gambar -->
       <div id="imageContainer" style="display: none;">
         <img id="uploadedImage" src="" alt="ASTEKPAM IMAGE">
       </div>
-      <p class="mt-4">MOHON IZIN MELAPORKAN ASTEKPAM <strong id="judulJadwal">RUPAM {SEKARANG} KE RUPAM {SELANJUTNYA}</strong> BERJALAN TERTIB DAN AMAN, DENGAN RINCIAN SEBAGAI BERIKUT :</p>
+      <p class="mt-4">MOHON IZIN MELAPORKAN ASTEKPAM <strong id="judulJadwal">RUPAM SEKARANG KE RUPAM SELANJUTNYA</strong> BERJALAN TERTIB DAN AMAN, DENGAN RINCIAN SEBAGAI BERIKUT :</p>
       <h2 class="neumorphism bg-light mt-4 mb-4">A. Penghuni</h2>
       <div class="penghuni-container">
         <div class="penghuni-item">
@@ -134,70 +222,72 @@
       </div>
       <h2 class="neumorphism bg-light mt-4 mb-4">B. Personil Pengamanan</h2>
       <div class="row rupam-grid">
+        <!-- Bagian Regu Pengamanan Kiri -->
         <div class="col-md-12">
-          <h3 class="text-center">Regu Pengamanan {Kiri}</h3>
-          <p><span class="fw-bold">Ka. Rupam :</span> {Nama Ka. Rupam}</p>
+          <h3 class="text-center text-dark">Regu Pengamanan</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> <strong><span id="kaRupamKiri"></span></strong></p>
           <p class="fw-bold">Anggota :</p>
           <ol>
-            <li>{Nama Anggota Satu}</li>
-            <li>{Nama Anggota Dua}</li>
+            <li><strong><span id="anggotaSatuKiri"></span></strong></li>
+            <li><strong><span id="anggotaDuaKiri"></span></strong></li>
           </ol>
-          <p><span class="fw-bold">Petugas P2U :</span> {Nama Petugas P2U}</p>
-          <p><span class="fw-bold">Keterangan :</span> {Keterangan}</p>
+          <p><span class="fw-bold">Petugas P2U :</span> <strong><span id="petugasP2UKiri"></span></strong></p>
+          <p><span class="fw-bold">Keterangan :</span> <strong><span id="keteranganKiri"></span></strong></p>
         </div>
+        <!-- Bagian Regu Pengamanan Kanan -->
         <div class="col-md-12">
-          <h3 class="text-center">Regu Pengamanan {Kanan}</h3>
-          <p><span class="fw-bold">Ka. Rupam :</span> {Nama Ka. Rupam}</p>
+          <h3 class="text-center text-dark">Regu Pengamanan</h3>
+          <p><span class="fw-bold">Ka. Rupam :</span> <strong><span id="kaRupamKanan"></span></strong></p>
           <p class="fw-bold">Anggota :</p>
           <ol>
-            <li>{Nama Anggota Satu}</li>
-            <li>{Nama Anggota Dua}</li>
+            <li><strong><span id="anggotaSatuKanan"></span></strong></li>
+            <li><strong><span id="anggotaDuaKanan"></span></strong></li>
           </ol>
-          <p><span class="fw-bold">Petugas P2U :</span> {Nama Petugas P2U}</p>
-          <p><span class="fw-bold">Keterangan :</span> {Keterangan}</p>
+          <p><span class="fw-bold">Petugas P2U :</span> <strong><span id="petugasP2UKanan"></span></strong></p>
+          <p><span class="fw-bold">Keterangan :</span> <strong><span id="keteranganKanan"></span></strong></p>
         </div>
         <div class="col-md-12">
-          <h3 class="text-center">Petugas Piket</h3>
-          <p><span class="fw-bold">Perwira Piket :</span> {Nama Perwira Piket}</p>
-          <p><span class="fw-bold">Petugas Dapur :</span> {Nama Petugas Dapur}</p>
-          <p><span class="fw-bold">Piket Blok Wanita :</span> {Nama Piket Blok Wanita}</p>
-          <p><span class="fw-bold">Piket Staff KPR :</span> {Nama Piket Staff KPR}</p>
-          <p><span class="fw-bold">Piket Staff Siang :</span> {Nama Piket Staff Siang}</p>
+          <h3 class="text-center text-dark">Petugas Piket</h3>
+          <p><span class="fw-bold">Perwira Piket :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Petugas Dapur :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Piket Blok Wanita :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Piket Staff KPR :</span> <strong>-</strong></p>
+          <p><span class="fw-bold">Piket Staff Siang :</span> <strong>-</strong></p>
         </div>
       </div>
       <h2 class="neumorphism bg-light mt-4 mb-4">C. Inventaris Regu Pengamanan</h2>
       <div class="inventaris-container">
         <div class="inventaris-item">
           <div class="inventaris-label">Senjata Api P3A :</div>
-          <div class="inventaris-value">1 Pucuk</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Amunisi P3A Karet :</div>
-          <div class="inventaris-value">10 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Borgol :</div>
-          <div class="inventaris-value">2 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Metal Detector :</div>
-          <div class="inventaris-value">1 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">HT :</div>
-          <div class="inventaris-value">6 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Senter :</div>
-          <div class="inventaris-value">1 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">Lonceng :</div>
-          <div class="inventaris-value">5 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
         <div class="inventaris-item">
           <div class="inventaris-label">CCTV :</div>
-          <div class="inventaris-value">16 Buah</div>
+          <div class="inventaris-value">-</div>
         </div>
       </div>
       <p class="mt-4 text-center fw-bold" style="letter-spacing: 0.05em;">SITUASI UNIT PELAKSANA TEKNIS (UPT) DALAM KEADAAN AMAN DAN TERKENDALI</p>
@@ -212,40 +302,12 @@
       </footer>
     </div>
     <!-- Tambahkan script JavaScript Bootstrap (Jika diperlukan) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
     <script src="/e-astekpam/assets/js/html2canvas.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/e-astekpam/assets/js/all.min.js"></script> -->
     <script src="/e-astekpam/assets/js/all.min.js"></script>
-    <script>
-      let isModalVisible = false;
-      let notificationModal = null;
-      
-      function showNotificationModal(event) {
-          event.preventDefault();
-          if (!isModalVisible) {
-              notificationModal = new bootstrap.Modal(document.getElementById('notificationModal'));
-              notificationModal.show();
-              isModalVisible = true;
-      
-              // Setelah modal tertutup, reset isModalVisible menjadi false
-              notificationModal._element.addEventListener('hidden.bs.modal', function () {
-                  isModalVisible = false;
-              });
-          }
-      }
-      
-      document.body.addEventListener('contextmenu', function (e) {
-          showNotificationModal(e);
-      });
-      
-      // Fungsi untuk menutup modal notifikasi
-      function closeNotificationModal() {
-          if (notificationModal) {
-              notificationModal.hide();
-          }
-      }
-    </script>
+    <div class="custom-notification" id="notification">
+      Lihat Sumber Halaman tidak diizinkan.
+    </div>
     <!-- Modal Notifikasi -->
     <div class="modal fade custom-modal" id="notificationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -264,5 +326,45 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          // Fungsi untuk menampilkan notifikasi dan mengatur teks notifikasi
+          function showCustomNotification(notificationId, message) {
+              const notification = document.getElementById(notificationId);
+              notification.innerText = message;
+              notification.style.display = "block";
+              setTimeout(function() {
+                  notification.style.display = "none";
+              }, 3000); // Notifikasi akan hilang setelah 3 detik
+          }
+      
+          // Menambahkan event listener untuk tombol "Terapkan Jadwal"
+          document.getElementById("terapkanJadwal").addEventListener("click", function () {
+              showCustomNotification("jadwalCustomNotification", "Jadwal telah diterapkan!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Unggah Gambar"
+          document.getElementById("uploadImageButton").addEventListener("click", function () {
+              showCustomNotification("imageCustomNotification", "Gambar telah diunggah!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Terapkan Data Penghuni"
+          document.getElementById("simpanPengaturanPenghuni").addEventListener("click", function () {
+              showCustomNotification("penghuniCustomNotification", "Data Penghuni telah disimpan!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Terapkan Regu" (Kiri)
+          document.getElementById("terapkanButtonKiri").addEventListener("click", function () {
+      const selectedRegu = document.getElementById("reguSelectKiri").value;
+      showCustomNotification("reguKiriCustomNotification", "" + selectedRegu + " telah diterapkan!");
+          });
+      
+          // Menambahkan event listener untuk tombol "Terapkan Regu" (Kanan)
+          document.getElementById("terapkanButtonKanan").addEventListener("click", function () {
+            const selectedRegu = document.getElementById("reguSelectKanan").value;
+            showCustomNotification("reguKananCustomNotification", "" + selectedRegu + " telah diterapkan!");
+          });
+      });
+    </script>
   </body>
 </html>
