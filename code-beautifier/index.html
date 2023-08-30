@@ -148,22 +148,26 @@
     <script src="https://cdn.jsdelivr.net/npm/js-beautify/js/lib/beautify-html.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
     <script>
-      function beautifyCode() {
+    function beautifyCode() {
         var inputCode = document.getElementById('code').value;
-      
-        var beautifiedCode = html_beautify(inputCode, {
-          indent_size: 2,
-          indent_with_tabs: false,
-          wrap_line_length: 80,
-          preserve_newlines: false,
-          max_preserve_newlines: 2,
+
+        // Menghapus baris kosong menggunakan regex
+        var beautifiedCode = inputCode.replace(/^\s*[\r\n]/gm, '');
+
+        // Melakukan beautify pada kode yang telah dihapus baris kosongnya
+        beautifiedCode = html_beautify(beautifiedCode, {
+            indent_size: 2,
+            indent_with_tabs: false,
+            wrap_line_length: 80,
+            preserve_newlines: false,
+            max_preserve_newlines: 2,
         });
-      
+
         document.getElementById('output').textContent = beautifiedCode;
         Prism.highlightElement(document.getElementById('output'));
-      
+
         showResultAndCopyButton();
-      }
+    }
       
       function uglifyCode() {
         var inputCode = document.getElementById('code').value;
