@@ -1,0 +1,234 @@
+body {
+  background: #f0f0f0;
+  margin: 0 auto;
+  font-family: "Lexend", sans-serif;
+}
+
+a {
+  color: #636e72;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6c5ce7;
+}
+
+p {
+  line-height: normal;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.header {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: transparent;
+  text-transform: uppercase;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.header span {
+  color: #636e72;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  margin: 20px auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.neumorphism-button {
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2), -4px -4px 8px 0px rgba(255, 255, 255, 0.5);
+}
+
+.form-label {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+.search-form-container {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.search-form {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.notification {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.error-notification {
+  background-color: #ff5733;
+}
+
+.panggil-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.panggil-button {
+  background-color: #4caf50;
+  color: #fff;
+  margin-right: 10px;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.panggil-button-spin::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #fff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.panggil-button:hover {
+  background-color: #45a049;
+}
+
+.error-notification {
+  background-color: #ff5733;
+}
+
+.form-range {
+  width: 80%;
+  height: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  appearance: none;
+  outline: none;
+  padding: 0;
+  position: relative;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #007bff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -7px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-range::-webkit-slider-thumb:hover {
+  background-color: #0056b3;
+}
+
+.form-range::-webkit-slider-thumb:active {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 8px 3px rgba(0, 123, 255, 0.5);
+}
+
+#volumeButton {
+  background-color: #ff5733;
+  margin-right: 10px;
+}
+
+#volumeButton:hover {
+  background-color: #d72c0b;
+}
+
+#alarmButton {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+#alarmButton:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  font-size: 14px;
+  background-color: transparent;
+  color: #636e72;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.source-code-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.source-code-btn {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 5px 5px 10px #b7b7b7, -5px -5px 10px #ffffff;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.source-code-btn:hover {
+  transform: scale(1.05);
+  box-shadow: inset 4px 4px 6px #b7b7b7, inset -4px -4px 6px #ffffff;
+}
+
+.source-code-btn i {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.source-code-btn span {
+  font-size: 14px;
+  font-weight: bold;
+}
