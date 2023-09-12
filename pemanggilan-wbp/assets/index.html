@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEMANGGILAN WBP | eliyantosarage.github.io</title>
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eliyantosarage/pemanggilan-wbp@main/assets/css/all.min.css">
+  <style>
+   @keyframes spin {
+    0% {
+     transform: rotate(0deg);
+    }
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+  </style>
+ </head>
+ <body>
+  <!-- Notifikasi -->
+  <div class="notification" id="notification">
+   Notifikasi di tengah halaman.
+  </div>
+  <!-- Audio notifikasi -->
+  <audio id="notification-sound">
+   <source src="https://cdn.jsdelivr.net/gh/eliyantosarage/pemanggilan-wbp@main/assets/audio/error.wav" type="audio/wav" />
+   Your browser does not support the audio element.
+  </audio>
+  <!-- Header -->
+  <div class="header">
+   <h1>Layanan Kunjungan</h1>
+   <span>Pemanggilan WBP</span>
+   <div class="source-code-btn-container">
+    <button class="source-code-btn">
+     <i class="fas fa-code"></i>
+     <span><a href="https://github.com/eliyantosarage/pemanggilan-wbp/" target="_blank">Get Source Code</a></span>
+    </button>
+   </div>
+  </div>
+  <!-- Kontainer utama -->
+  <div class="container">
+   <!-- Pilihan nama WBP -->
+   <div class="mb-3">
+    <label for="namaSelect" class="form-label">Pilih Nama WBP</label>
+    <select id="namaSelect" class="form-select">
+     <option value="" disabled selected>--- Pilih Nama WBP ---</option>
+     <option value="AAN SUBEHAN BIN KARDIYONO">AAN SUBEHAN BIN KARDIYONO</option>
+     <option value="AANG RIFAUDIN BIN AHMAD MUJIYANTO">AANG RIFAUDIN BIN AHMAD MUJIYANTO</option>
+     <option value="ABDUL MUNIR BIN ABDUL WAHID">ABDUL MUNIR BIN ABDUL WAHID</option>
+     <option value="ACHMAD AGUS BIN MUHARIS">ACHMAD AGUS BIN MUHARIS</option>
+     <option value="ACHMAD ROWI BIN CHOZIN">ACHMAD ROWI BIN CHOZIN</option>
+     <option value="ADID GUNAWAN BIN SUMARMAN">ADID GUNAWAN BIN SUMARMAN</option>
+     <option value="AGUNG SEPTIANTO BIN SUGIYANTO">AGUNG SEPTIANTO BIN SUGIYANTO</option>
+     <option value="AGUS RAINAIN BIN SABARI">AGUS RAINAIN BIN SABARI</option>
+     <option value="AGUS SUWARSONO BIN TRISONO">AGUS SUWARSONO BIN TRISONO</option>
+     <option value="AHMAD MUANAS BIN SUWANTO">AHMAD MUANAS BIN SUWANTO</option>
+     <option value="AHMAD NUR ROFIK BIN BEJO SANTOSO">AHMAD NUR ROFIK BIN BEJO SANTOSO</option>
+     <option value="AHMAD RIFA'I BIN TARJONO">AHMAD RIFA'I BIN TARJONO</option>
+     <option value="AHMAD RONI BIN PARJO AHMADUN">AHMAD RONI BIN PARJO AHMADUN</option>
+     <option value="AL FURQON MINAL MUTAQIN BIN PUJIONO">AL FURQON MINAL MUTAQIN BIN PUJIONO</option>
+     <option value="ALFAN FAUZI BIN UMAR">ALFAN FAUZI BIN UMAR</option>
+     <option value="ALFAN NURUL FAIZIN BIN TAMYIS">ALFAN NURUL FAIZIN BIN TAMYIS</option>
+     <option value="AMRAN ADITA BIN AJAD SAEFUDIN">AMRAN ADITA BIN AJAD SAEFUDIN</option>
+     <option value="ANANG SUGIARTO BIN HERI SUNARYO">ANANG SUGIARTO BIN HERI SUNARYO</option>
+     <option value="ANDI ANTO BIN MARKIM">ANDI ANTO BIN MARKIM</option>
+     <option value="ANDREAS TATENGKENG BIN JOSMAN TATENGKENG">ANDREAS TATENGKENG BIN JOSMAN TATENGKENG</option>
+     <option value="ANDREAS WIDODO BIN SUTOMO">ANDREAS WIDODO BIN SUTOMO</option>
+     <option value="ANDRI YOGA WISNU JATI BIN SUNEP">ANDRI YOGA WISNU JATI BIN SUNEP</option>
+     <option value="ANJAR SUNGKOWO BIN LUJENG HADI TARYONO">ANJAR SUNGKOWO BIN LUJENG HADI TARYONO</option>
+     <option value="ANTON BUDIONO BIN WARID CAKRA ATMAJA">ANTON BUDIONO BIN WARID CAKRA ATMAJA</option>
+     <option value="ANTON PUJIYANTO BIN SUHAMDI">ANTON PUJIYANTO BIN SUHAMDI</option>
+     <option value="ANTON SETYONO BIN KASMET">ANTON SETYONO BIN KASMET</option>
+     <option value="ARDY RIYANTO MALIK BIN MULYADI">ARDY RIYANTO MALIK BIN MULYADI</option>
+     <option value="ARGA AHMAD FAHREZI BIN FAHUDIN">ARGA AHMAD FAHREZI BIN FAHUDIN</option>
+     <option value="ARI ADITYA KESUMA BIN PRASETYO">ARI ADITYA KESUMA BIN PRASETYO</option>
+     <option value="ARI SURAWAN BIN SAMAN">ARI SURAWAN BIN SAMAN</option>
+     <option value="ARIF NGABDUL KARIM BIN SUGIYARTO">ARIF NGABDUL KARIM BIN SUGIYARTO</option>
+     <option value="AWAN BIN SARDI">AWAN BIN SARDI</option>
+     <option value="AWAN YUDHA SAPUTRA BIN SAHONO">AWAN YUDHA SAPUTRA BIN SAHONO</option>
+     <option value="BAGUS YUSEP GUTOMO BIN SURATMAN">BAGUS YUSEP GUTOMO BIN SURATMAN</option>
+     <option value="BANGKIT TRI MULIANA BIN PURWADI">BANGKIT TRI MULIANA BIN PURWADI</option>
+     <option value="BHARUDIN BIN MARYANTO">BHARUDIN BIN MARYANTO</option>
+     <option value="DAVID BUDIMAN BIN BUDIYANTO">DAVID BUDIMAN BIN BUDIYANTO</option>
+     <option value="DICKI MAULANA RIDWAN BIN MUGIYONO">DICKI MAULANA RIDWAN BIN MUGIYONO</option>
+     <option value="DIDIT SETIYAWAN BIN DARMONO">DIDIT SETIYAWAN BIN DARMONO</option>
+     <option value="DIMAS ELIT GUNAWAN BIN YUNARTO">DIMAS ELIT GUNAWAN BIN YUNARTO</option>
+     <option value="DUL ROKHIM BIN JAMAL">DUL ROKHIM BIN JAMAL</option>
+     <option value="EKO HIDAYAT BIN SAMSUL HIDAYAT">EKO HIDAYAT BIN SAMSUL HIDAYAT</option>
+     <option value="EKO WAHONO RAHAYU BIN SUDIRMAN">EKO WAHONO RAHAYU BIN SUDIRMAN</option>
+     <option value="ERFANI BIN AMIN">ERFANI BIN AMIN</option>
+     <option value="FAHRUL MUHISAM BIN MULYADI">FAHRUL MUHISAM BIN MULYADI</option>
+     <option value="FAJAR RIZKI NUGROHO BIN MUKHAYAT">FAJAR RIZKI NUGROHO BIN MUKHAYAT</option>
+     <option value="FERDY ADJIE SUKMAWAN BIN SUHARDI RAHARJO">FERDY ADJIE SUKMAWAN BIN SUHARDI RAHARJO</option>
+     <option value="FERY PRIYANTO BIN TASRIFUDIN">FERY PRIYANTO BIN TASRIFUDIN</option>
+     <option value="GOKO YUNIAR PRATAMA BIN YUDI ARIS SUBIANTORO">GOKO YUNIAR PRATAMA BIN YUDI ARIS SUBIANTORO</option>
+     <option value="HANIF EKO SAPUTRO BIN PURWADI">HANIF EKO SAPUTRO BIN PURWADI</option>
+     <option value="HARI SUSATYO BIN SAYUTI">HARI SUSATYO BIN SAYUTI</option>
+     <option value="HARTONO BIN TUHARDI">HARTONO BIN TUHARDI</option>
+     <option value="IHSANUDIN BIN CHABIB KASIRO">IHSANUDIN BIN CHABIB KASIRO</option>
+     <option value="IMAM IHSANNUDIN BIN MISNO">IMAM IHSANNUDIN BIN MISNO</option>
+     <option value="IMAM NUR HIDAYAT BIN SUPRAYITNO">IMAM NUR HIDAYAT BIN SUPRAYITNO</option>
+     <option value="IVAN DIBYO TARUNA BIN SUPRIYONO">IVAN DIBYO TARUNA BIN SUPRIYONO</option>
+     <option value="JEFRI ANDRI ANTO BIN TUKIDI">JEFRI ANDRI ANTO BIN TUKIDI</option>
+     <option value="JOKO PRASETYO BIN MULYONO">JOKO PRASETYO BIN MULYONO</option>
+     <option value="JOKO RIYANTO BIN SUROSO">JOKO RIYANTO BIN SUROSO</option>
+     <option value="JUNEDI BIN KASMANTO">JUNEDI BIN KASMANTO</option>
+     <option value="KABUL YUDIANTO BIN AHMAD SYUKUR">KABUL YUDIANTO BIN AHMAD SYUKUR</option>
+     <option value="KEVIN STEVANUS BIN IKIN">KEVIN STEVANUS BIN IKIN</option>
+     <option value="KHOIRIL MUSTOFA BIN MUH ZAENUDIN">KHOIRIL MUSTOFA BIN MUH ZAENUDIN</option>
+     <option value="KHUSAENI BIN MUHYONO">KHUSAENI BIN MUHYONO</option>
+     <option value="KUAT SUSANTO BIN NASRUDIN">KUAT SUSANTO BIN NASRUDIN</option>
+     <option value="KUWAT BIN SAMSO">KUWAT BIN SAMSO</option>
+     <option value="LINA MARYOWATI BINTI SUMARYO">LINA MARYOWATI BINTI SUMARYO</option>
+     <option value="LINDU AJI BIN SAMINGAN">LINDU AJI BIN SAMINGAN</option>
+     <option value="LUKMAN NUL KHAKIM BIN TEGUH WIBOWO">LUKMAN NUL KHAKIM BIN TEGUH WIBOWO</option>
+     <option value="LUT KURNIAWAN BIN K. M. TOYIB">LUT KURNIAWAN BIN K. M. TOYIB</option>
+     <option value="MAHFUD KHOERUDIN BIN KHOERUN">MAHFUD KHOERUDIN BIN KHOERUN</option>
+     <option value="MAMAT AFIFAN BIN SOBIYANTO">MAMAT AFIFAN BIN SOBIYANTO</option>
+     <option value="MIRAN BIN MISNO">MIRAN BIN MISNO</option>
+     <option value="MISWANTO BIN ABU DAUD">MISWANTO BIN ABU DAUD</option>
+     <option value="MUHAMAD ATHOILAH YUSUF BIN YUSUF">MUHAMAD ATHOILAH YUSUF BIN YUSUF</option>
+     <option value="MUHAMAD IRGIMAULANA BIN AFIFI">MUHAMAD IRGIMAULANA BIN AFIFI</option>
+     <option value="MUHAMAD NGILMAN ARIS BIN AHMAD ISROFIL">MUHAMAD NGILMAN ARIS BIN AHMAD ISROFIL</option>
+     <option value="MUHAMMAD ABBAS AL MURSI BIN MUHLIM KHARIS">MUHAMMAD ABBAS AL MURSI BIN MUHLIM KHARIS</option>
+     <option value="MUHAMMAD ARDI MAULANA BIN SUWITO">MUHAMMAD ARDI MAULANA BIN SUWITO</option>
+     <option value="MUHAMMAD LUTFI ARIFAN BIN TEGUH NURODIN">MUHAMMAD LUTFI ARIFAN BIN TEGUH NURODIN</option>
+     <option value="MUHAMMAD ZIDAN FAUZI BIN MUFID">MUHAMMAD ZIDAN FAUZI BIN MUFID</option>
+     <option value="MUTA'AL ADIB ARAFAT BIN AUNUR ROFIQ">MUTA'AL ADIB ARAFAT BIN AUNUR ROFIQ</option>
+     <option value="NASIRUN BIN MARSONO">NASIRUN BIN MARSONO</option>
+     <option value="NIYANTO BIN PASWINOTO">NIYANTO BIN PASWINOTO</option>
+     <option value="NUR HIDAYAT MA'RIFAT BIN SUMARDI">NUR HIDAYAT MA'RIFAT BIN SUMARDI</option>
+     <option value="NURRAHMAT BIN ARWANTO">NURRAHMAT BIN ARWANTO</option>
+     <option value="NURSIN SAMIAT BIN MUHROMI">NURSIN SAMIAT BIN MUHROMI</option>
+     <option value="PARWONO BIN ISRORI">PARWONO BIN ISRORI</option>
+     <option value="PRATITIS NUR CAHYONO PUTRO BIN BAMBANG PRIYONO">PRATITIS NUR CAHYONO PUTRO BIN BAMBANG PRIYONO</option>
+     <option value="PRIYONO BIN KHAERI">PRIYONO BIN KHAERI</option>
+     <option value="PURWANTO BIN JAMIL BASIRIN">PURWANTO BIN JAMIL BASIRIN</option>
+     <option value="RAHMAT SALAM BIN SASTRO SUDARSO">RAHMAT SALAM BIN SASTRO SUDARSO</option>
+     <option value="RANTO SUJADI BIN UNTUNG SUJADI">RANTO SUJADI BIN UNTUNG SUJADI</option>
+     <option value="RATNO HARI HANDOYO BIN DARMAWAN">RATNO HARI HANDOYO BIN DARMAWAN</option>
+     <option value="RIDWAN KAMAL BIN ZAENUDIN">RIDWAN KAMAL BIN ZAENUDIN</option>
+     <option value="RIKI HIDAYAT BIN ROSIDIN">RIKI HIDAYAT BIN ROSIDIN</option>
+     <option value="RISKI SATRIA ADITAMA BIN MUGENYO">RISKI SATRIA ADITAMA BIN MUGENYO</option>
+     <option value="RISKY SETIYONO PUTRO BIN MULYONO">RISKY SETIYONO PUTRO BIN MULYONO</option>
+     <option value="RIZKI RIFANI BIN UNTUNG NGATNO">RIZKI RIFANI BIN UNTUNG NGATNO</option>
+     <option value="ROMADLON BIN PRAYETNO">ROMADLON BIN PRAYETNO</option>
+     <option value="RUSDAN BIN EDI SUWARNO">RUSDAN BIN EDI SUWARNO</option>
+     <option value="SAFRIAL BIN RIZAL">SAFRIAL BIN RIZAL</option>
+     <option value="SAHRUL ROMANDONI BIN MAHFUDIN">SAHRUL ROMANDONI BIN MAHFUDIN</option>
+     <option value="SAMSUL MAIN BIN TORO">SAMSUL MAIN BIN TORO</option>
+     <option value="SARPAN BIN KASBANI">SARPAN BIN KASBANI</option>
+     <option value="SARWO RAHARJO BIN SASTRO SUKARTO">SARWO RAHARJO BIN SASTRO SUKARTO</option>
+     <option value="SATRIO BAGAS YULIANSYAH BIN MUTOHAR">SATRIO BAGAS YULIANSYAH BIN MUTOHAR</option>
+     <option value="SATYA ARDY PRAKOSO BIN SARJONO">SATYA ARDY PRAKOSO BIN SARJONO</option>
+     <option value="SEPTO ANDIYONO BIN WARTOYO">SEPTO ANDIYONO BIN WARTOYO</option>
+     <option value="SETIYONO BIN AHMAD SADERI">SETIYONO BIN AHMAD SADERI</option>
+     <option value="SLAMET ARFIYANTO BIN SABAR NURSALIM">SLAMET ARFIYANTO BIN SABAR NURSALIM</option>
+     <option value="SLAMET BIN NURSITO">SLAMET BIN NURSITO</option>
+     <option value="SLAMET MISBAH RIYANTO BIN SUKARSO">SLAMET MISBAH RIYANTO BIN SUKARSO</option>
+     <option value="SLAMET PRAKOSA BIN KASAN MURDINI">SLAMET PRAKOSA BIN KASAN MURDINI</option>
+     <option value="SLAMET SUPRIKHATIN BIN MUHYANTO">SLAMET SUPRIKHATIN BIN MUHYANTO</option>
+     <option value="SLAMET SUPRIYADI BIN IMBUH SUPARMAN">SLAMET SUPRIYADI BIN IMBUH SUPARMAN</option>
+     <option value="SLAMET WIDODO BIN SOETRISNO DJOJO HARTONO">SLAMET WIDODO BIN SOETRISNO DJOJO HARTONO</option>
+     <option value="SODIKIN BIN MUH YASIN">SODIKIN BIN MUH YASIN</option>
+     <option value="SRI LENI YANTO BIN H. MASKUD">SRI LENI YANTO BIN H. MASKUD</option>
+     <option value="SUKUR ROHMAT BIN JUMAIDAH">SUKUR ROHMAT BIN JUMAIDAH</option>
+     <option value="SULISTIYO BIN SUMITRO">SULISTIYO BIN SUMITRO</option>
+     <option value="SUNET SUMEDI BIN TUNOTO">SUNET SUMEDI BIN TUNOTO</option>
+     <option value="SUPARNO  BIN ZUBAIDI">SUPARNO BIN ZUBAIDI</option>
+     <option value="SUPRIYADI BIN RIYANTO BUDI">SUPRIYADI BIN RIYANTO BUDI</option>
+     <option value="SUPRIYANTO BIN WAHINI">SUPRIYANTO BIN WAHINI</option>
+     <option value="TENDI BIN JUMONO">TENDI BIN JUMONO</option>
+     <option value="TEUKU IQBAL MAULANA BIN SAIFUDDIN">TEUKU IQBAL MAULANA BIN SAIFUDDIN</option>
+     <option value="THOHARUN AL ASYADZ BIN JAMRO">THOHARUN AL ASYADZ BIN JAMRO</option>
+     <option value="TRIANTO BIN WINARSO">TRIANTO BIN WINARSO</option>
+     <option value="TRIYATNO BIN YASROJI">TRIYATNO BIN YASROJI</option>
+     <option value="TUMARI BIN AMINUDIN">TUMARI BIN AMINUDIN</option>
+     <option value="WAHYU BUDIARTO BIN MARJONO">WAHYU BUDIARTO BIN MARJONO</option>
+     <option value="WAHYU YOGO ISWORO BIN SUCIPTO">WAHYU YOGO ISWORO BIN SUCIPTO</option>
+     <option value="WALUYO BIN SUKAMSO">WALUYO BIN SUKAMSO</option>
+     <option value="WARIS SUSILO BIN PRIYO PRAYITNO">WARIS SUSILO BIN PRIYO PRAYITNO</option>
+     <option value="WISNU TITO BIN HADI WAHYONO">WISNU TITO BIN HADI WAHYONO</option>
+     <option value="YAYAN WIDI HARJONO BIN SOEKARYONO">YAYAN WIDI HARJONO BIN SOEKARYONO</option>
+     <option value="YONO BIN SUDARYO">YONO BIN SUDARYO</option>
+     <option value="YUDA SURMADI BIN SLAMET RIYADI">YUDA SURMADI BIN SLAMET RIYADI</option>
+     <option value="YUDHA AJI ARTA NAGORO BIN M. ISKAK MUNANDAR">YUDHA AJI ARTA NAGORO BIN M. ISKAK MUNANDAR</option>
+     <option value="YUDIYONO BIN MARYONO">YUDIYONO BIN MARYONO</option>
+     <option value="ZAMRONI BIN AMIN MASTUR">ZAMRONI BIN AMIN MASTUR</option>
+    </select>
+   </div>
+   <!-- Kotak pencarian nama WBP -->
+   <div class="mb-3">
+    <label for="search" class="form-label">Cari Nama WBP</label>
+    <div class="search-form-container">
+     <input type="text" id="search" class="form-control search-form" placeholder="cari nama warga binaan" />
+     <button onclick="cariNama()" class="neumorphism-button btn btn-primary">
+      <i class="fas fa-search"></i>
+     </button>
+    </div>
+   </div>
+   <!-- Kotak pengaturan kecepatan suara -->
+   <div class="mb-3">
+    <label for="kecepatanSuara" class="form-label"></label>
+    <input type="range" id="kecepatanSuara" class="form-range" min="0.5" max="1.5" step="0.1" value="0.9" />
+    <p id="kecepatanSuaraLabel">Kecepatan Suara: 0.9x</p>
+   </div>
+   <!-- Tombol pemanggilan suara -->
+   <div class="panggil-button-container">
+    <!-- Tombol volume -->
+    <button id="volumeButton" onclick="putarAudio()" class="panggil-button">
+     <i class="fas fa-bell"></i>
+    </button>
+    <!-- Tombol pemanggilan suara -->
+    <button id="panggilButton" onclick="panggilSuara()" class="panggil-button">
+     <i class="fas fa-microphone"></i>
+    </button>
+    <!-- Tombol alarm -->
+    <button id="alarmButton" onclick="alarmSuara()" class="panggil-button">
+     <i class="fas fa-triangle-exclamation"></i>
+    </button>
+   </div>
+   <!-- Pesan pemanggilan -->
+   <p id="panggilan" class="mt-4"></p>
+  </div>
+  <!-- Footer -->
+  <footer class="footer">
+   <p>Copyright &copy; 2023 <a href="https://www.instagram.com/eliyantosarage_/" target="_blank">Eliyanto Sarage</a></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/gh/eliyantosarage/pemanggilan-wbp@main/assets/js/all.min.js">
+  </script>
+  <!-- Pustaka Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>
