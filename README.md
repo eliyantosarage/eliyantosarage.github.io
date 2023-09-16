@@ -5,11 +5,18 @@ Selamat datang di repositori pribadi saya, <strong>Eliyanto Sarage</strong>! Di 
 ###
 
 <div align="center">
+<img alt="Static Badge" src="https://img.shields.io/badge/ekatalendra-.com-blue?link=https%3A%2F%2Fekatalendra.com%2F">
+</div>
+
+###
+
+<div align="center">
+  <img alt="GitHub commit activity (branch)" src="https://shields.io/github/commit-activity/t/eliyantosarage/eliyantosarage.github.io">
   <img alt="GitHub followers" src="https://img.shields.io/github/followers/eliyantosarage">
   <img alt="GitHub forks" src="https://img.shields.io/github/forks/eliyantosarage/eliyantosarage.github.io">
+  <img alt="GitHub" src="https://img.shields.io/github/license/eliyantosarage/eliyantosarage.github.io">
   <img alt="GitHub User's stars" src="https://img.shields.io/github/stars/eliyantosarage">
   <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/eliyantosarage/eliyantosarage.github.io">
-  <img alt="GitHub" src="https://img.shields.io/github/license/eliyantosarage/eliyantosarage.github.io">
 </div>
 
 ###
