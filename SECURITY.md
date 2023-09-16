@@ -1,21 +1,22 @@
-# Security Policy
+# Kebijakan Keamanan
 
-## Supported Versions
+## Laporan Kerentanan Keamanan
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Jika Anda menemukan kerentanan keamanan dalam proyek ini, harap laporkan kepada kami segera. Kami sangat menghargai kontribusi Anda untuk menjaga keamanan proyek ini.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+Silakan laporkan kerentanan keamanan ke alamat email berikut: officialelsa21@gmail.com
 
-## Reporting a Vulnerability
+## Proses Pelaporan Kerentanan
 
-Use this section to tell people how to report a vulnerability.
+Kami akan menanggapi laporan kerentanan secepat mungkin dan akan berusaha untuk mengatasi masalah tersebut dengan cepat.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Kami akan menjaga kerahasiaan laporan Anda dan akan memberi Anda pembaruan tentang kemajuan penanganan masalah.
+
+## Tanggung Jawab Anda
+
+Kami menghargai upaya Anda untuk menjaga keamanan proyek ini. Namun, kami ingin mengingatkan Anda untuk:
+
+- Tidak mengekspos atau membagikan detail kerentanan sampai kami selesai menanganinya.
+- Tidak mengeksploitasi kerentanan yang Anda temukan.
+
+Terima kasih atas kerjasama Anda dalam menjaga keamanan proyek ini.
