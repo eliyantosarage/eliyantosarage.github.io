@@ -5,7 +5,7 @@ Selamat datang di repositori pribadi saya, <strong>Eliyanto Sarage</strong>! Di 
 ###
 
 <div align="center">
-<a href="https://ekatalendra.com/" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/ekatalendra-.com-green?labelColor=blue"></a>
+<img alt="Static Badge" src="https://github.com/eliyantosarage/eliyantosarage.github.io/actions/workflows/static.yml/badge.svg"/>
 </div>
 
 ###
@@ -51,6 +51,12 @@ Selamat datang di repositori pribadi saya, <strong>Eliyanto Sarage</strong>! Di 
   <a href="https://www.tiktok.com/@eliyantosarage_" target="_blank">
     <img src="https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white" alt="TikTok">
   </a>
+</div>
+
+###
+
+<div align="center">
+<a href="https://ekatalendra.com/" target="_blank"><img alt="ekatalendra.com" src="https://img.shields.io/badge/ekatalendra-.com-green?labelColor=blue"></a>
 </div>
 
 ## Project
