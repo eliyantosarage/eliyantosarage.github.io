@@ -9,16 +9,23 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
   <!-- animate.css 4.1.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
   <style>
    body {
-    padding-top: 30px;
-    padding-bottom: 30px;
     background-color: #f0f0f0;
+    margin: 0 auto;
+    padding: 40px 0;
+    font-family: "Lexend", sans-serif;
+    max-width: 1200px;
    }
+
    a {
     text-decoration: none;
     letter-spacing: 1px;
    }
+
    .header {
     text-align: center;
     color: #337ab7;
@@ -26,6 +33,7 @@
     padding: 10px;
     margin-bottom: 20px;
    }
+
    .container {
     max-width: 800px;
     border-radius: 20px;
@@ -34,10 +42,12 @@
     padding: 20px;
     margin: 0 auto;
    }
+
    label {
     display: block;
     text-align: center;
    }
+
    input[type="text"] {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
@@ -45,6 +55,7 @@
     box-shadow: inset 5px 5px 10px #cbcbcb, inset -5px -5px 10px #ffffff;
     margin-bottom: 15px;
    }
+
    .btn-primary {
     font-size: 18px;
     background-color: #337ab7;
@@ -54,14 +65,17 @@
     border-radius: 30px;
     box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
    }
+
    .btn-primary:hover {
     background-color: #286090;
    }
+
    .btn-success {
     border: none;
     border-radius: 5px;
     box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
    }
+
    .copy-success-message {
     text-align: center;
     display: none;
@@ -69,9 +83,11 @@
     font-size: 14px;
     margin-top: 5px;
    }
+
    .center-button {
     text-align: center;
    }
+
    .footer {
     text-align: center;
     padding: 20px;
@@ -79,6 +95,7 @@
     color: #888;
     margin-top: 30px;
    }
+
    .footer a {
     color: #333;
     background-color: transparent;
@@ -101,9 +118,11 @@
     transition: height 0.3s;
     z-index: -1;
    }
+
    .footer a:hover {
     color: #fff;
    }
+
    .footer a:hover::before {
     height: 100%;
    }
