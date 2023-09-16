@@ -5,41 +5,41 @@ Selamat datang di repositori pribadi saya, <strong>Eliyanto Sarage</strong>! Di 
 ###
 
 <div align="center">
-<img alt="Static Badge" src="https://img.shields.io/badge/ekatalendra-.com-blue?link=https%3A%2F%2Fekatalendra.com%2F">
+<a href="https://ekatalendra.com/" target="_blank"><img alt="Static Badge" src="https://img.shields.io/badge/ekatalendra-.com-green?labelColor=blue"></a>
 </div>
 
 ###
 
 <div align="center">
-  <img alt="GitHub commit activity (branch)" src="https://shields.io/github/commit-activity/t/eliyantosarage/eliyantosarage.github.io">
-  <img alt="GitHub followers" src="https://img.shields.io/github/followers/eliyantosarage">
-  <img alt="GitHub forks" src="https://img.shields.io/github/forks/eliyantosarage/eliyantosarage.github.io">
-  <img alt="GitHub" src="https://img.shields.io/github/license/eliyantosarage/eliyantosarage.github.io">
-  <img alt="GitHub User's stars" src="https://img.shields.io/github/stars/eliyantosarage">
-  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/eliyantosarage/eliyantosarage.github.io">
+  <img alt="GitHub commit activity (branch)" src="https://shields.io/github/commit-activity/t/eliyantosarage/eliyantosarage.github.io"/>
+  <img alt="GitHub followers" src="https://img.shields.io/github/followers/eliyantosarage"/>
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/eliyantosarage/eliyantosarage.github.io"/>
+  <img alt="GitHub" src="https://img.shields.io/github/license/eliyantosarage/eliyantosarage.github.io"/>
+  <img alt="GitHub User's stars" src="https://img.shields.io/github/stars/eliyantosarage"/>
+  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/eliyantosarage/eliyantosarage.github.io"/>
 </div>
 
 ###
 
 <div align="center">
-  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
-  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
-  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
-  <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/>
+  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" alt="PHP"/>
 </div>
 
 ###
 
 <div align="center">
-  <img src="https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-  <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" alt="Flutter">
-  <img src="https://img.shields.io/badge/joomla-%235091CD.svg?style=for-the-badge&logo=joomla&logoColor=white" alt="Joomla">
-  <img src="https://img.shields.io/badge/less-2B4C80?style=for-the-badge&logo=less&logoColor=white" alt="LESS">
-  <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" alt="SASS">
-  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS">
-  <img src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white" alt="WordPress">
+  <img src="https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
+  <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" alt="Flutter"/>
+  <img src="https://img.shields.io/badge/joomla-%235091CD.svg?style=for-the-badge&logo=joomla&logoColor=white" alt="Joomla"/>
+  <img src="https://img.shields.io/badge/less-2B4C80?style=for-the-badge&logo=less&logoColor=white" alt="LESS"/>
+  <img src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" alt="SASS"/>
+  <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS"/>
+  <img src="https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white" alt="WordPress"/>
 </div>
 
 ###
