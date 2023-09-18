@@ -63,9 +63,23 @@ Selamat datang di repositori pribadi saya, <strong>Eliyanto Sarage</strong>! Di 
 
 Di repositori ini, Anda akan menemukan beragam proyek yang mencakup berbagai bidang. Dari desain grafis yang memukau hingga aplikasi yang inovatif, saya berusaha untuk menghadirkan solusi kreatif dan fungsional. Setiap proyek memiliki cerita unik di baliknya, mulai dari konsep awal hingga hasil akhir yang mengagumkan.
 
-- [<strong>E-ASTEKPAM</strong>](https://eliyantosarage.github.io/e-astekpam/): Sistem elektronik untuk laporan Apel Serah Terima Regu Pengamanan. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.
-- [<strong>PEMANGGILAN WBP</strong>](https://eliyantosarage.github.io/pemanggilan-wbp/): Aplikasi web sederhana yang dirancang untuk memudahkan petugas Lapas/Rutan dalam memanggil Warga Binaan Pemasyarakatan (WBP) yang sedang dikunjungi oleh keluarga mereka. Aplikasi ini menggunakan teknologi Text-to-Speech untuk mengonversi nama WBP menjadi suara yang dapat didengar oleh pengunjung dan WBP.
-- [<strong>Google Drive Direct Link Generator</strong>](https://eliyantosarage.github.io/google-drive-direct-link-generator/): Alat yang memungkinkan pengguna untuk membuat tautan langsung ke berkas atau folder di Google Drive tanpa perlu memberikan akses ke seluruh akun Google Drive mereka. Dengan ini, pengguna dapat berbagi file dengan mudah dan aman.
+- [<strong>E-ASTEKPAM</strong>](https://eliyantosarage.github.io/e-astekpam/) : Sistem elektronik untuk laporan Apel Serah Terima Regu Pengamanan. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.
+###
+- [<strong>Pemanggilan WBP</strong>](https://eliyantosarage.github.io/pemanggilan-wbp/) : Aplikasi web sederhana yang dirancang untuk memudahkan petugas Lapas/Rutan dalam memanggil Warga Binaan Pemasyarakatan (WBP) yang sedang dikunjungi oleh keluarga mereka. Aplikasi ini menggunakan teknologi Text-to-Speech untuk mengonversi nama WBP menjadi suara yang dapat didengar oleh pengunjung dan WBP.
+###
+- [<strong>Google Drive Direct Link Generator</strong>](https://eliyantosarage.github.io/google-drive-direct-link-generator/) : Alat yang memungkinkan pengguna untuk membuat tautan langsung ke berkas atau folder di Google Drive tanpa perlu memberikan akses ke seluruh akun Google Drive mereka. Dengan ini, pengguna dapat berbagi file dengan mudah dan aman.
+###
+- [<strong>Image Converter</strong>](https://eliyantosarage.github.io/image-converter/) : Alat untuk mengubah format gambar dari satu jenis ke jenis lainnya, berguna untuk berbagai keperluan seperti situs web, pencetakan, atau media sosial.
+###
+- [<strong>Link Extractor</strong>](https://eliyantosarage.github.io/link-extractor/) : Alat yang digunakan untuk mengambil tautan atau URL dari halaman web atau dokumen teks.
+###
+- [<strong>Live HTML Preview</strong>](https://eliyantosarage.github.io/live-html-preview/) : Alat yang memungkinkan pengguna untuk melihat tampilan langsung dari kode HTML yang mereka tulis atau edit tanpa perlu menyimpannya terlebih dahulu. Berguna untuk pengembang web dan desainer untuk menguji dan perbaiki tampilan halaman web secara instan sebelum dipublikasikan secara online.
+###
+- [<strong>Password Generator</strong>](https://eliyantosarage.github.io/password-generator/) : Alat yang menciptakan kata sandi kuat dan aman secara otomatis dengan berbagai kombinasi karakter. Berguna untuk melindungi akun dan informasi pribadi dari ancaman keamanan.
+###
+- [<strong>WhatsApp Chat Generator</strong>](https://eliyantosarage.github.io/whatsapp-chat-generator/) : Alat yang memungkinkan pengguna untuk membuat tautan teks khusus yang membuka percakapan WhatsApp tertentu. Tautan ini memudahkan komunikasi melalui WhatsApp dengan cepat.
+###
+- [<strong>Age Calculator</strong>](https://eliyantosarage.github.io/age-calculator/) :  Alat yang digunakan untuk menghitung usia seseorang berdasarkan tanggal lahir mereka. Dengan alat ini, pengguna dapat memasukkan tanggal lahir seseorang, dan Age Calculator akan secara otomatis menghitung berapa tahun, bulan, dan hari usia mereka saat ini.
 
 Anda dapat menjelajahi berbagai proyek ini, membaca lebih lanjut tentang ide di balik mereka, atau bahkan [menghubungi saya](mailto:officialelsa21@gmail.com) untuk pertanyaan, kerja sama, atau komentar. Saya sangat senang mendengar dari Anda.
 
