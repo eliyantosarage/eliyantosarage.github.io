@@ -44,11 +44,30 @@
       text-align: center;
       margin-top: 20px;
       }
-      .whatsapp-link a {
+      .whatsapp-link textarea {
+      width: 100%;
+      height: 100px;
+      resize: none;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      outline: none;
+      }
+      .whatsapp-link button {
       display: inline-block;
-      font-size: 18px;
-      color: #4CAF50;
-      text-decoration: none;
+      font-size: 14px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      }
+      .whatsapp-link button:hover {
+      background-color: #45a049;
       }
       .footer {
       text-align: center;
@@ -89,6 +108,19 @@
       .footer a:hover::before {
       height: 100%;
       }
+      .notification {
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 5px;
+      z-index: 1;
+      display: none;
+      }
     </style>
   </head>
   <body data-rsssl="1">
@@ -106,25 +138,43 @@
           <input type="text" class="form-control" id="message" name="message" placeholder="Tulis pesan Anda" required>
         </div>
         <div class="text-center mb-3">
-          <input type="submit" class="btn btn-primary" value="Buat Tautan WhatsApp">
+          <button type="button" class="btn btn-primary" onclick="generateWhatsAppLink()">Buat Tautan WhatsApp</button>
         </div>
       </form>
-      <div class="whatsapp-link">
-        <a id="link" href="#" target="_blank"></a>
+      <div class="whatsapp-link" id="linkSection" style="display: none;">
+        <textarea id="linkText" readonly></textarea>
+        <button type="button btn-sm" onclick="copyToClipboard()" class="copy-button"><i class="fas fa-copy"></i> Salin ke Clipboard</button>
       </div>
     </div>
     <div class="footer">
       <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
     </div>
+    <div id="notification" class="notification"></div>
     <script>
-      document.getElementById('chatForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+      function generateWhatsAppLink() {
         var phone = document.getElementById('phone').value;
         var message = document.getElementById('message').value;
         var link = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
-        document.getElementById('link').href = link;
-        document.getElementById('link').textContent = 'Klik di sini untuk membuka WhatsApp';
-      });
+        document.getElementById('linkText').value = link;
+        document.getElementById('linkSection').style.display = 'block';
+        showNotification('Tautan WhatsApp telah dibuat!');
+      }
+      
+      function copyToClipboard() {
+        var linkText = document.getElementById('linkText');
+        linkText.select();
+        document.execCommand('copy');
+        showNotification('Tautan WhatsApp telah disalin ke clipboard!');
+      }
+      
+      function showNotification(message) {
+        var notification = document.getElementById('notification');
+        notification.textContent = message;
+        notification.style.display = 'block';
+        setTimeout(function() {
+          notification.style.display = 'none';
+        }, 2000);
+      }
     </script>
   </body>
 </html>
