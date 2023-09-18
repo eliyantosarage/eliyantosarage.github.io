@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live HTML Preview</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+      background-color: #f0f0f0;
+      font-family: 'Lexend', sans-serif;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 1200px;
+      }
+      a, a:hover {
+      text-decoration: none;
+      }
+      .header {
+      text-align: center;
+      background-color: transparent;
+      color: #555;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+      }
+      .header h1 {
+      font-size: 36px;
+      font-family: 'Lexend Deca', sans-serif;
+      letter-spacing: 2px;
+      }
+      .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #f7f7f7;
+      border-radius: 15px;
+      box-shadow: 10px 10px 30px #d9d9d9, -10px -10px 30px #ffffff;
+      }
+      .column {
+      flex: 1 1 48%;
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: #f7f7f7;
+      border-radius: 15px;
+      box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+      }
+      .column h2 {
+      font-size: 18px;
+      margin-top: 0;
+      font-weight: bold;
+      }
+      #code {
+      width: 100%;
+      height: 400px;
+      resize: none;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #f2f2f2;
+      box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+      }
+      #preview {
+      width: 100%;
+      height: 400px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+      }
+      input[type="text"] {
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      padding: 8px;
+      border-radius: 4px;
+      box-shadow: inset 3px 3px 5px #d9d9d9, inset -3px -3px 5px #ffffff;
+      }
+      .notification {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border-radius: 4px;
+      z-index: 9999;
+      box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
+      }
+      .notification-text {
+      font-weight: bold;
+      }
+      .footer {
+      text-align: center;
+      margin-top: 20px;
+      background-color: transparent;
+      color: #555;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      }
+      .footer a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #333;
+      background-color: transparent;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: 1px dashed #ccc;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+      }
+      .footer a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #555;
+      transition: height 0.3s;
+      z-index: -1;
+      }
+      .footer a:hover {
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      }
+      .footer a:hover::before {
+      height: 100%;
+      }
+    </style>
+  </head>
+  <body data-rsssl=1>
+    <div class="header">
+      <h1>Live HTML Preview</h1>
+    </div>
+    <div class="container">
+      <div class="column">
+        <h2 style="text-align: center;">Kode HTML</h2>
+        <textarea id="code" oninput="updatePreview()"></textarea>
+        <div>
+          <div id="progressBar"></div>
+          <div style="margin-top:10px" class="input-group">
+            <input type="text" id="url" class="form-control"
+              placeholder="Masukkan URL">
+            <button class="btn btn-primary" onclick="loadCode()">Muat Kode</button>
+            <button class="btn btn-danger ml-2" onclick="clearCode()">Hapus</button>
+            <button class="btn btn-success ml-2" onclick="copyToClipboard()">Salin</button>
+          </div>
+        </div>
+      </div>
+      <div class="column text-center">
+        <h2>Pratinjau</h2>
+        <iframe id="preview"></iframe>
+        <button style="margin-top:10px" class="btn btn-secondary"
+          onclick="openPreview()">Buka Pratinjau dalam Jendela Baru</button>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+    <script>
+      var previewWindow;
+      
+      function updatePreview() {
+        var code = document.getElementById('code').value;
+        var previewFrame = document.getElementById('preview');
+        previewFrame.contentDocument.open();
+        previewFrame.contentDocument.write(code);
+        previewFrame.contentDocument.close();
+      }
+      
+      function loadCode() {
+        var url = document.getElementById('url').value;
+        if (url) {
+          // Menampilkan progress bar
+          var progressBar = document.getElementById('progressBar');
+          progressBar.innerHTML = '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>';
+      
+          fetch(url)
+            .then(response => {
+              // Mendapatkan total ukuran file
+              var contentLength = response.headers.get('Content-Length');
+              if (contentLength) {
+                contentLength = parseInt(contentLength);
+                var loadedBytes = 0;
+      
+                // Mengupdate progress bar saat menerima data
+                response.body.on('data', function(chunk) {
+                  loadedBytes += chunk.length;
+                  var progress = loadedBytes / contentLength * 100;
+                  progressBar.querySelector('.progress-bar').style.width = progress + '%';
+                });
+              }
+      
+              return response.text();
+            })
+            .then(data => {
+              // Menghilangkan progress bar setelah selesai
+              progressBar.innerHTML = '';
+      
+              document.getElementById('code').value = data;
+              updatePreview();
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        }
+      }
+      
+      function copyToClipboard() {
+      var code = document.getElementById('code').value;
+      var notification = document.createElement('div');
+      notification.innerHTML = '<span class="notification-text">Kode disalin ke clipboard!</span>';
+      notification.classList.add('notification');
+      document.body.appendChild(notification);
+      
+      // Mengatur waktu penghapusan notifikasi setelah beberapa detik
+      setTimeout(function () {
+      notification.remove();
+      }, 3000);
+      
+      navigator.clipboard
+      .writeText(code)
+      .then(() => {
+        // ...
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+      }
+      
+      function openPreview() {
+        var code = document.getElementById('code').value;
+        if (previewWindow && !previewWindow.closed) {
+          previewWindow.document.open();
+          previewWindow.document.write(code);
+          previewWindow.document.close();
+        } else {
+          previewWindow = window.open();
+          previewWindow.document.open();
+          previewWindow.document.write(code);
+          previewWindow.document.close();
+        }
+      }
+      
+      function clearCode() {
+        document.getElementById('code').value = '';
+        document.getElementById('url').value = '';
+        updatePreview();
+      }
+    </script>
+  </body>
+</html>
