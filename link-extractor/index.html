@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang=id>
+  <head>
+    <title>Link Extractor</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+      background-color: #f0f0f0;
+      font-family: 'Lexend', sans-serif;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 800px;
+      }
+      a, a:hover {
+      text-decoration: none;
+      }
+      .header {
+      text-align: center;
+      background-color: transparent;
+      color: #555;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+      }
+      .header h1 {
+      font-size: 36px;
+      font-family: 'Lexend Deca', sans-serif;
+      letter-spacing: 2px;
+      }
+      .form-control {
+      margin-bottom: 15px;
+      background-color: #f8f9fa;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
+      }
+      #teksKeluaran.form-control::placeholder {
+      text-align: center;
+      }
+      #teksKeluaran {
+      resize: none;
+      min-height: 200px;
+      margin-top: 10px;
+      background-color: #f8f9fa;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
+      }
+      .btn-extract {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      }
+      .btn-extract .btn {
+      margin: 0 10px;
+      padding: 5px 25px;
+      border-radius: 5px;
+      box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
+      }
+      .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+      }
+      .btn-container .btn {
+      margin: 0 10px;
+      padding: 5px 25px;
+      border-radius: 30px;
+      box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
+      }
+      #jumlahLink {
+      text-align: center;
+      margin-top: 10px;
+      }
+      #pesanSalin {
+      color: #28a745;
+      }
+      .pesanSalin {
+      text-align: center;
+      margin-top: 15px;
+      }
+      .bg-light {
+      background-color: #f8f9fa !important;
+      }
+      .footer {
+      text-align: center;
+      margin-top: 20px;
+      background-color: transparent;
+      color: #555;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      }
+      .footer a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #333;
+      background-color: transparent;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: 1px dashed #ccc;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+      }
+      .footer a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #555;
+      transition: height 0.3s;
+      z-index: -1;
+      }
+      .footer a:hover {
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      }
+      .footer a:hover::before {
+      height: 100%;
+      }
+    </style>
+  </head>
+  <body data-rsssl=1 data-rsssl=1>
+    <div class="header">
+      <h1>Link Extractor</h1>
+    </div>
+    <div class="container">
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="text" id="inputURL" class="form-control bg-light"
+            placeholder="Masukkan URL">
+        </div>
+        <div class="btn-extract">
+          <button class="btn btn-primary"
+            onclick="ekstrakTautan()">Extract</button>
+        </div>
+      </div>
+      <div id="progressBar" class="progress invisible">
+        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated"
+          role="progressbar" style="width: 100%"></div>
+      </div>
+      <textarea id="teksKeluaran" class="form-control bg-light"
+        placeholder="Tautan yang diekstrak akan muncul di sini"
+        readonly></textarea>
+      <span id="hasilEkstraksi"></span>
+      <div id="jumlahLink"></div>
+      <div class="btn-container">
+        <button id="salinButton" class="btn btn-secondary" onclick="copyTeks()"
+          disabled>Salin</button>
+        <a id="downloadButton" class="btn btn-secondary" href="#"
+          download="tautan.txt" onclick="downloadTeks()" disabled>Unduh (.txt)</a>
+      </div>
+      <div class="pesanSalin">
+        <span id="pesanSalin"></span>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
+    </div>
+    <script>
+      function ekstrakTautan() {
+        var inputURL = document.getElementById("inputURL").value;
+      
+        // Menghapus hasil tautan sebelum memulai proses ekstraksi baru
+        document.getElementById("teksKeluaran").value = "";
+        document.getElementById("hasilEkstraksi").textContent = "";
+      
+        // Menampilkan progress bar
+        var progressBar = document.getElementById("progressBar");
+        progressBar.classList.remove("invisible");
+      
+        fetch(inputURL)
+          .then(response => response.text())
+          .then(html => {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, "text/html");
+      
+            var domainUtama = getDomainUtama(inputURL);
+            var tautanSet = new Set();
+      
+            var tautan = doc.getElementsByTagName("a");
+      
+            for (var i = 0; i < tautan.length; i++) {
+              var href = tautan[i].getAttribute("href");
+              if (href && !href.startsWith("#")) {
+                tautanSet.add(href);
+              }
+            }
+      
+            var tautanArray = Array.from(tautanSet);
+      
+            var teksKeluaran = "";
+      
+            if (tautanSet.size > 0) {
+              for (var link of tautanSet) {
+                teksKeluaran += link + "\n";
+              }
+            } else {
+              teksKeluaran = "Tidak ditemukan tautan.";
+            }
+      
+            document.getElementById("teksKeluaran").value = teksKeluaran;
+      
+            // Menampilkan jumlah tautan yang diekstrak
+            document.getElementById("jumlahLink").textContent = "Jumlah Tautan: " + tautanSet.size;
+      
+            // Menampilkan tombol salin teks dan unduh teks
+            var salinButton = document.getElementById("salinButton");
+            var downloadButton = document.getElementById("downloadButton");
+            salinButton.disabled = false;
+            downloadButton.disabled = false;
+            downloadButton.href = "data:text/plain;charset=utf-8," + encodeURIComponent(teksKeluaran);
+      
+            // Menyembunyikan progress bar setelah selesai
+            progressBar.classList.add("invisible");
+          })
+          .catch(error => {
+            document.getElementById("teksKeluaran").value = "Kesalahan: " + error;
+      
+            // Menyembunyikan progress bar setelah selesai
+            progressBar.classList.add("invisible");
+          });
+      }
+      
+      function getDomainUtama(url) {
+        var domain = "";
+        var match = url.match(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/i);
+        if (match !== null && match.length > 1) {
+          domain = match[1];
+        }
+        return domain;
+      }
+      
+      function copyTeks() {
+        var teksKeluaran = document.getElementById("teksKeluaran");
+        teksKeluaran.select();
+        document.execCommand("copy");
+      
+        var pesanSalin = document.getElementById("pesanSalin");
+        pesanSalin.textContent = "Teks telah disalin!";
+        setTimeout(function () {
+          pesanSalin.textContent = "";
+        }, 2000);
+      }
+      
+      function downloadTeks() {
+        // Tidak ada yang perlu dilakukan di sini karena href sudah diatur sebelumnya
+      }
+    </script>
+  </body>
+</html>
