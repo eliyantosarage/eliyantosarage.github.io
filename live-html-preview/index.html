@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live HTML Preview</title>
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -100,7 +102,7 @@
       box-shadow: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
       }
       .notification-text {
-      font-weight: bold;
+      font-weight: normal;
       }
       .footer {
       text-align: center;
@@ -172,8 +174,6 @@
     <div class="footer">
       <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
     <script>
       var previewWindow;
       
@@ -193,23 +193,7 @@
           progressBar.innerHTML = '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>';
       
           fetch(url)
-            .then(response => {
-              // Mendapatkan total ukuran file
-              var contentLength = response.headers.get('Content-Length');
-              if (contentLength) {
-                contentLength = parseInt(contentLength);
-                var loadedBytes = 0;
-      
-                // Mengupdate progress bar saat menerima data
-                response.body.on('data', function(chunk) {
-                  loadedBytes += chunk.length;
-                  var progress = loadedBytes / contentLength * 100;
-                  progressBar.querySelector('.progress-bar').style.width = progress + '%';
-                });
-              }
-      
-              return response.text();
-            })
+            .then(response => response.text())
             .then(data => {
               // Menghilangkan progress bar setelah selesai
               progressBar.innerHTML = '';
