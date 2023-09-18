@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Chat Generator</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
+    <style>
+      body {
+      background-color: #f0f0f0;
+      font-family: 'Lexend', sans-serif;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 800px;
+      }
+      a, a:hover {
+      text-decoration: none;
+      }
+      .header {
+      text-align: center;
+      background-color: transparent;
+      color: #555;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+      }
+      .header h1 {
+      font-size: 36px;
+      font-family: 'Lexend Deca', sans-serif;
+      letter-spacing: 2px;
+      }
+      .container {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 8px 8px 15px #d9d9d9, -8px -8px 15px #ffffff;
+      }
+      .whatsapp-link {
+      text-align: center;
+      margin-top: 20px;
+      }
+      .whatsapp-link a {
+      display: inline-block;
+      font-size: 18px;
+      color: #4CAF50;
+      text-decoration: none;
+      }
+      .footer {
+      text-align: center;
+      margin-top: 20px;
+      background-color: transparent;
+      color: #555;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      }
+      .footer a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #333;
+      background-color: transparent;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: 1px dashed #ccc;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+      }
+      .footer a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #555;
+      transition: height 0.3s;
+      z-index: -1;
+      }
+      .footer a:hover {
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      }
+      .footer a:hover::before {
+      height: 100%;
+      }
+    </style>
+  </head>
+  <body data-rsssl="1">
+    <div class="header">
+      <h1>WhatsApp Chat Generator</h1>
+    </div>
+    <div class="container">
+      <form id="chatForm">
+        <div class="mb-3">
+          <label for="phone" class="form-label">Nomor Telepon (dengan kode negara):</label>
+          <input type="text" class="form-control" id="phone" name="phone" placeholder="Contoh: 6281234567890" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Pesan:</label>
+          <input type="text" class="form-control" id="message" name="message" placeholder="Tulis pesan Anda" required>
+        </div>
+        <div class="text-center mb-3">
+          <input type="submit" class="btn btn-primary" value="Buat Tautan WhatsApp">
+        </div>
+      </form>
+      <div class="whatsapp-link">
+        <a id="link" href="#" target="_blank"></a>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
+    </div>
+    <script>
+      document.getElementById('chatForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var phone = document.getElementById('phone').value;
+        var message = document.getElementById('message').value;
+        var link = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+        document.getElementById('link').href = link;
+        document.getElementById('link').textContent = 'Klik di sini untuk membuka WhatsApp';
+      });
+    </script>
+  </body>
+</html>
