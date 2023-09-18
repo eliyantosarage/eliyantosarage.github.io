@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Password Generator</title>
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
+    <style>
       body {
       background-color: #f0f0f0;
       font-family: 'Lexend', sans-serif;
@@ -34,32 +34,28 @@
       font-family: 'Lexend Deca', sans-serif;
       letter-spacing: 2px;
       }
-
-   .card {
-    background: #f0f0f0;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2),
-     -8px -8px 16px 0 rgba(255, 255, 255, 0.2);
-   }
-
-   .btn-primary {
-    background-color: #007bff;
-    width: 100%;
-    border: none;
-   }
-
-   .copy-button {
-    background-color: #fff;
-    border-radius: 0;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    color: #007bff;
-   }
-
-   .footer {
+      .card {
+      border: none;
+      background-color: #ececec;
+      border-radius: 20px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      }
+      .btn-primary {
+      background-color: #007bff;
+      width: 100%;
+      border: none;
+      }
+      .copy-button {
+      background-color: #fff;
+      border-radius: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      color: #007bff;
+      }
+      .footer {
       text-align: center;
       margin-top: 20px;
       background-color: transparent;
@@ -98,93 +94,93 @@
       .footer a:hover::before {
       height: 100%;
       }
-  </style>
- </head>
- <body data-rsssl=1>
-  <div class="header">
-    <h1>Password Generator</h1>
-  </div>
-  <div class="container">
-   <div class="card p-4">
-    <form id="password-generator-form">
-     <div class="mb-3">
-      <label for="password-length" class="form-label">Panjang Kata Sandi:</label>
-      <input type="number" class="form-control" id="password-length" min="1" value="8" required>
-     </div>
-     <div class="form-check mb-3">
-      <input type="checkbox" class="form-check-input" id="include-uppercase">
-      <label class="form-check-label" for="include-uppercase">Sertakan Huruf Besar</label>
-     </div>
-     <div class="form-check mb-3">
-      <input type="checkbox" class="form-check-input" id="include-lowercase">
-      <label class="form-check-label" for="include-lowercase">Sertakan Huruf Kecil</label>
-     </div>
-     <div class="form-check mb-3">
-      <input type="checkbox" class="form-check-input" id="include-numbers">
-      <label class="form-check-label" for="include-numbers">Sertakan Angka</label>
-     </div>
-     <div class="form-check mb-3">
-      <input type="checkbox" class="form-check-input" id="include-symbols">
-      <label class="form-check-label" for="include-symbols">Sertakan Simbol</label>
-     </div>
-     <button type="submit" class="btn btn-primary">Hasilkan Kata Sandi</button>
-    </form>
-    <div class="mt-4">
-     <label for="generated-password" class="form-label">Kata Sandi:</label>
-     <div class="input-group">
-      <input type="text" class="form-control text-center" id="generated-password" readonly>
-      <div class="input-group-append">
-       <button class="btn btn-outline-secondary copy-button" id="copy-password" type="button">
-        <i class="fas fa-clipboard"></i>
-       </button>
-      </div>
-     </div>
-     <div class="mt-2 text-center" id="copy-confirmation" style="display: none; color: green;">Kata Sandi Telah Disalin!</div>
+    </style>
+  </head>
+  <body data-rsssl=1>
+    <div class="header">
+      <h1>Password Generator</h1>
     </div>
-   </div>
-  </div>
-  <div class="footer">
-    <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('password-generator-form');
-    const generatedPassword = document.getElementById('generated-password');
-    const copyButton = document.getElementById('copy-password');
-    const copyConfirmation = document.getElementById('copy-confirmation');
-    form.addEventListener('submit', function(event) {
-     event.preventDefault();
-     const passwordLength = parseInt(document.getElementById('password-length').value);
-     const includeUppercase = document.getElementById('include-uppercase').checked;
-     const includeLowercase = document.getElementById('include-lowercase').checked;
-     const includeNumbers = document.getElementById('include-numbers').checked;
-     const includeSymbols = document.getElementById('include-symbols').checked;
-     const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-     const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-     const numberChars = '0123456789';
-     const symbolChars = '!@#$%^&*()_+[]{}|;:,.<>?';
-     let validChars = '';
-     if (includeUppercase) validChars += uppercaseChars;
-     if (includeLowercase) validChars += lowercaseChars;
-     if (includeNumbers) validChars += numberChars;
-     if (includeSymbols) validChars += symbolChars;
-     let password = '';
-     for (let i = 0; i < passwordLength; i++) {
-      const randomIndex = Math.floor(Math.random() * validChars.length);
-      password += validChars.charAt(randomIndex);
-     }
-     generatedPassword.value = password;
-    });
-    copyButton.addEventListener('click', function() {
-     generatedPassword.select();
-     document.execCommand('copy');
-     copyConfirmation.style.display = 'block';
-     setTimeout(function() {
-      copyConfirmation.style.display = 'none';
-     }, 2000); // Pesan konfirmasi akan hilang setelah 2 detik
-    });
-   });
-  </script>
- </body>
+    <div class="container">
+      <div class="card p-4">
+        <form id="password-generator-form">
+          <div class="mb-3">
+            <label for="password-length" class="form-label">Panjang Kata Sandi:</label>
+            <input type="number" class="form-control" id="password-length" min="1" value="8" required>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="include-uppercase">
+            <label class="form-check-label" for="include-uppercase">Sertakan Huruf Besar</label>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="include-lowercase">
+            <label class="form-check-label" for="include-lowercase">Sertakan Huruf Kecil</label>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="include-numbers">
+            <label class="form-check-label" for="include-numbers">Sertakan Angka</label>
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="include-symbols">
+            <label class="form-check-label" for="include-symbols">Sertakan Simbol</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Hasilkan Kata Sandi</button>
+        </form>
+        <div class="mt-4">
+          <label for="generated-password" class="form-label">Kata Sandi:</label>
+          <div class="input-group">
+            <input type="text" class="form-control text-center" id="generated-password" readonly>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary copy-button" id="copy-password" type="button">
+              <i class="fas fa-clipboard"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mt-2 text-center" id="copy-confirmation" style="display: none; color: green;">Kata Sandi Telah Disalin!</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+       const form = document.getElementById('password-generator-form');
+       const generatedPassword = document.getElementById('generated-password');
+       const copyButton = document.getElementById('copy-password');
+       const copyConfirmation = document.getElementById('copy-confirmation');
+       form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const passwordLength = parseInt(document.getElementById('password-length').value);
+        const includeUppercase = document.getElementById('include-uppercase').checked;
+        const includeLowercase = document.getElementById('include-lowercase').checked;
+        const includeNumbers = document.getElementById('include-numbers').checked;
+        const includeSymbols = document.getElementById('include-symbols').checked;
+        const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+        const numberChars = '0123456789';
+        const symbolChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+        let validChars = '';
+        if (includeUppercase) validChars += uppercaseChars;
+        if (includeLowercase) validChars += lowercaseChars;
+        if (includeNumbers) validChars += numberChars;
+        if (includeSymbols) validChars += symbolChars;
+        let password = '';
+        for (let i = 0; i < passwordLength; i++) {
+         const randomIndex = Math.floor(Math.random() * validChars.length);
+         password += validChars.charAt(randomIndex);
+        }
+        generatedPassword.value = password;
+       });
+       copyButton.addEventListener('click', function() {
+        generatedPassword.select();
+        document.execCommand('copy');
+        copyConfirmation.style.display = 'block';
+        setTimeout(function() {
+         copyConfirmation.style.display = 'none';
+        }, 2000); // Pesan konfirmasi akan hilang setelah 2 detik
+       });
+      });
+    </script>
+  </body>
 </html>
