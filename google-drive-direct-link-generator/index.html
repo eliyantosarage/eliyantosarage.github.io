@@ -4,43 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Drive Direct Link Generator</title>
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any" />
-  <!-- Bootstrap 5.3.1 CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
-  <!-- animate.css 4.1.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/eliyantosarage/eliyantosarage.github.io@main/assets/favicon.svg" type="image/svg" sizes="any">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
   <style>
-   body {
-    background-color: #f0f0f0;
-    margin: 0 auto;
-    padding: 40px 0;
-    font-family: "Lexend", sans-serif;
-    max-width: 1200px;
-   }
-
-   a {
-    text-decoration: none;
-    letter-spacing: 1px;
-   }
-
-   .header {
-    text-align: center;
-    color: #337ab7;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    margin-bottom: 20px;
-   }
+      body {
+      background-color: #f0f0f0;
+      font-family: 'Lexend', sans-serif;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 800px;
+      }
+      a, a:hover {
+      text-decoration: none;
+      }
+      .header {
+      text-align: center;
+      background-color: transparent;
+      color: #555;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+      }
+      .header h1 {
+        font-size: 36px;
+      font-family: 'Lexend Deca', sans-serif;
+      letter-spacing: 2px;
+      }
 
    .container {
-    max-width: 800px;
     border-radius: 20px;
     background-color: #f9f9f9;
     box-shadow: 5px 5px 15px #cbcbcb, -5px -5px 15px #ffffff;
     padding: 20px;
-    margin: 0 auto;
    }
 
    label {
@@ -61,7 +60,6 @@
     background-color: #337ab7;
     padding: 10px 30px;
     border: none;
-    margin-top: 20px;
     border-radius: 30px;
     box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
    }
@@ -89,43 +87,44 @@
    }
 
    .footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #888;
-    margin-top: 30px;
-   }
-
-   .footer a {
-    color: #333;
-    background-color: transparent;
-    padding: 5px 20px;
-    border-radius: 5px;
-    border: 1px dashed #ccc;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
-   }
-
-   .footer a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: #6c5ce7;
-    transition: height 0.3s;
-    z-index: -1;
-   }
-
-   .footer a:hover {
-    color: #fff;
-   }
-
-   .footer a:hover::before {
-    height: 100%;
-   }
+      text-align: center;
+      margin-top: 20px;
+      background-color: transparent;
+      color: #555;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      }
+      .footer a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #333;
+      background-color: transparent;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: 1px dashed #ccc;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+      }
+      .footer a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #555;
+      transition: height 0.3s;
+      z-index: -1;
+      }
+      .footer a:hover {
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      }
+      .footer a:hover::before {
+      height: 100%;
+      }
   </style>
  </head>
  <body data-rsssl="1">
@@ -142,8 +141,8 @@
      <button type="submit" class="btn btn-primary">Generate Direct Link</button>
     </div>
    </form>
-   <div id="result" style="display: none; margin-top: 20px;">
-    <label for="directLink" class="mb-2"><strong>Tautan Langsung:</strong></label>
+   <div id="result" style="display: none;">
+    <label for="directLink" class="mb-2 mt-4"><strong>Tautan Langsung:</strong></label>
     <div class="input-group mb-3">
      <input type="text" class="form-control" id="directLink" readonly />
      <div class="input-group-append">
@@ -153,10 +152,9 @@
     <div class="copy-success-message" id="copySuccessMessage"></div>
    </div>
   </div>
-  <!-- Penutup elemen kontainer -->
-  <footer class="footer">
-   <p><a href="https://eliyantosarage.github.io/" target="_blank">eliyantosarage.github.io</a></p>
-  </footer>
+  <div class="footer">
+    <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
+  </div>
   <!-- jQuery, Popper.js, Bootstrap 5.3.1 JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
