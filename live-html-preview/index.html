@@ -55,6 +55,7 @@
       box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
       }
       .column h2 {
+      text-align: center;
       font-size: 18px;
       margin-top: 0;
       font-weight: bold;
@@ -147,11 +148,11 @@
     </div>
     <div class="container">
       <div class="column">
-        <h2 style="text-align: center;">Kode HTML</h2>
+        <h2>Kode HTML</h2>
         <textarea id="code" oninput="updatePreview()"></textarea>
         <div>
           <div id="progressBar"></div>
-          <div style="margin-top:10px" class="input-group">
+          <div class="input-group mt-2">
             <input type="text" id="url" class="form-control"
               placeholder="Masukkan URL">
             <button class="btn btn-primary" onclick="loadCode()">Muat Kode</button>
@@ -163,7 +164,7 @@
       <div class="column text-center">
         <h2>Pratinjau</h2>
         <iframe id="preview"></iframe>
-        <button style="margin-top:10px" class="btn btn-secondary"
+        <button class="btn btn-secondary mt-2"
           onclick="openPreview()">Buka Pratinjau dalam Jendela Baru</button>
       </div>
     </div>
