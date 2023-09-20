@@ -28,11 +28,9 @@ a:hover {
   font-size: 48px;
   color: #333;
   margin: 0;
-  margin-bottom: 20px;
 }
 
 .header .repository {
-  margin-top: 20px;
   text-align: center;
   font-size: 14px;
   border: 1px dashed #ccc;
