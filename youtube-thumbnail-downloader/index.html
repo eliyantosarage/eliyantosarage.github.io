@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail Downloader</title>
+    <link rel="icon" href="/assets/4proberbuwv3t2fjddyg6wnjya.png" type="image/png" sizes="any">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap">
+    <style>
+      body {
+      background-color: #f0f0f0;
+      font-family: 'Lexend', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      }
+      a, a:hover {
+      text-decoration: none;
+      }
+      .main-container {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 80%;
+      max-width: 800px;
+      margin: 20px;
+      }
+      .main-container h1 {
+      font-family: 'Lexend Deca', sans-serif;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 36px;
+      margin-bottom: 20px;
+      }
+      .content-container {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      max-width: 800px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      }
+      .content-container p {
+      text-align: justify;
+      }
+      .content-container h2 {
+      font-family: 'Lexend Deca', sans-serif;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+      }
+      .form-control {
+      border-radius: 10px;
+      background-color: #f8f9fa;
+      border: none;
+      box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.7), inset 3px 3px 7px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      }
+      .btn-primary {
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      width: 100%;
+      margin-bottom: 20px;
+      }
+      .thumbnail-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      }
+      .thumbnail {
+      margin: 10px;
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+      }
+      .thumbnail-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.2s ease-in-out;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      .download-button {
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.2s ease-in-out;
+      }
+      .download-button:hover {
+      background-color: #0056b3;
+      }
+      .footer {
+      text-align: center;
+      margin-top: 20px;
+      background-color: transparent;
+      color: #555;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      }
+      .footer a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #333;
+      background-color: transparent;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: 1px dashed #ccc;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+      }
+      .footer a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: #555;
+      transition: height 0.3s;
+      z-index: -1;
+      }
+      .footer a:hover {
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      }
+      .footer a:hover::before {
+      height: 100%;
+      }
+      @media (max-width: 600px) {
+      .main-container {
+      width: 100%;
+      border-radius: 0;
+      }
+      .content-container {
+      width: 100%;
+      border-radius: 0;
+      }
+      }
+      #notifikasi {
+      display: none;
+      background-color: #f44336;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Kontainer Utama -->
+    <div class="main-container">
+      <h1 class="text-center">Download Thumbnail YouTube</h1>
+      <div class="mb-3">
+        <input type="text" id="youtubeUrl" class="form-control" placeholder="Masukkan URL Video YouTube">
+      </div>
+      <div class="mb-3 text-center">
+        <button class="btn btn-primary" onclick="downloadThumbnails()">Download Thumbnails</button>
+        <div id="notifikasi" class="alert alert-danger" style="display: none;">
+          URL video YouTube tidak valid.
+        </div>
+      </div>
+      <div class="thumbnail-container text-center mt-4">
+        <a class="download-link" style="display: none;" download target="_blank">
+        <img class="thumbnail-image img-fluid" alt="Thumbnail Video (Resolusi 1)">
+        </a>
+        <a class="download-link" style="display: none;" download target="_blank">
+        <img class="thumbnail-image img-fluid" alt="Thumbnail Video (Resolusi 2)">
+        </a>
+        <a class="download-link" style="display: none;" download target="_blank">
+        <img class="thumbnail-image img-fluid" alt="Thumbnail Video (Resolusi 3)">
+        </a>
+        <a class="download-link" style="display: none;" download target="_blank">
+        <img class="thumbnail-image img-fluid" alt="Thumbnail Video (Resolusi 4)">
+        </a>
+      </div>
+    </div>
+    <!-- Kontainer Konten -->
+    <div class="content-container">
+      <h2>Cara Menggunakan "YouTube Thumbnail Downloader"</h2>
+      <p>
+        <strong>YouTube Thumbnail Downloader</strong> adalah alat yang memudahkan Anda untuk mengunduh thumbnail video dari YouTube. 
+        Berikut adalah langkah-langkahnya:
+      </p>
+      <ol>
+        <li>Masukkan <strong>URL video YouTube</strong> yang ingin Anda ambil thumbnailnya ke dalam kotak input di atas.</li>
+        <li>Klik tombol <strong>"Download Thumbnails"</strong>.</li>
+        <li>Thumbnail video akan ditampilkan di bawah dengan tombol <strong>"Download"</strong> untuk setiap resolusi.</li>
+        <li>Klik tombol <strong>"Download"</strong> pada thumbnail yang ingin Anda unduh.</li>
+      </ol>
+      <p>
+        Dengan mengikuti langkah-langkah di atas, Anda dapat dengan mudah mengunduh thumbnail video YouTube sesuai dengan resolusi yang Anda inginkan.
+      </p>
+    </div>
+    <div class="footer">
+      <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function downloadThumbnails() {
+          const youtubeUrl = document.getElementById("youtubeUrl").value;
+          const videoId = extractVideoId(youtubeUrl);
+      
+          const notifikasi = document.getElementById("notifikasi");
+      
+          if (videoId) {
+              const resolutions = ["maxresdefault", "sddefault", "hqdefault", "mqdefault", "default"];
+              const thumbnailUrls = resolutions.map((resolution, index) => {
+                  return `https://img.youtube.com/vi/${videoId}/${resolution}.jpg`;
+              });
+      
+              const thumbnailContainer = document.querySelector(".thumbnail-container");
+              thumbnailContainer.innerHTML = '';
+      
+              thumbnailUrls.forEach((url, index) => {
+                  // Membuat container untuk thumbnail
+                  const thumbnailDiv = document.createElement("div");
+                  thumbnailDiv.classList.add("thumbnail");
+      
+                  // Membuat elemen gambar
+                  const thumbnailImage = document.createElement("img");
+                  thumbnailImage.src = url;
+                  thumbnailImage.alt = `Thumbnail Video (Resolusi ${index + 1})`;
+                  thumbnailImage.classList.add("thumbnail-image");
+      
+                  // Membuat tautan download
+                  const downloadButton = document.createElement("a");
+                  downloadButton.href = url;
+                  downloadButton.download = `Thumbnail_${videoId}_${resolutions[index]}.jpg`;
+                  downloadButton.classList.add("btn", "btn-primary", "download-button");
+                  downloadButton.textContent = `Download (${resolutions[index]})`;
+                  downloadButton.target = "_blank";
+      
+                  // Menambahkan elemen ke dalam container thumbnail
+                  thumbnailDiv.appendChild(thumbnailImage);
+                  thumbnailDiv.appendChild(downloadButton);
+      
+                  // Menambahkan container thumbnail ke dalam thumbnail container
+                  thumbnailContainer.appendChild(thumbnailDiv);
+              });
+      
+              // Sembunyikan notifikasi jika valid
+              notifikasi.style.display = "none";
+          } else {
+              // Tampilkan notifikasi jika URL tidak valid
+              notifikasi.style.display = "block";
+      
+              // Hapus notifikasi setelah 3 detik
+              setTimeout(function () {
+                  notifikasi.style.display = "none";
+              }, 3000);
+          }
+      }
+      
+      function extractVideoId(url) {
+          const match = url.match(/[?&]v=([^&]+)/);
+          return match && match[1];
+      }
+    </script>
+  </body>
+</html>
