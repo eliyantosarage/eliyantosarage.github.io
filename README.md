@@ -80,6 +80,8 @@ Di repositori ini, Anda akan menemukan beragam proyek yang mencakup berbagai bid
 - [<strong>WhatsApp Chat Generator</strong>](https://eliyantosarage.github.io/whatsapp-chat-generator/) : Alat yang memungkinkan pengguna untuk membuat tautan teks khusus yang membuka percakapan WhatsApp tertentu. Tautan ini memudahkan komunikasi melalui WhatsApp dengan cepat.
 ###
 - [<strong>Age Calculator</strong>](https://eliyantosarage.github.io/age-calculator/) :  Alat yang digunakan untuk menghitung usia seseorang berdasarkan tanggal lahir mereka. Dengan alat ini, pengguna dapat memasukkan tanggal lahir seseorang, dan Age Calculator akan secara otomatis menghitung berapa tahun, bulan, dan hari usia mereka saat ini.
+###
+- [<strong>YouTube Thumbnail Downloader</strong>](https://eliyantosarage.github.io/youtube-thumbnail-downloader/) : adalah alat untuk mengunduh gambar miniatur dari video YouTube. Ini membantu pengguna mendapatkan gambar miniatur berkualitas tinggi untuk berbagi atau digunakan di situs web mereka.
 
 Anda dapat menjelajahi berbagai proyek ini, membaca lebih lanjut tentang ide di balik mereka, atau bahkan [menghubungi saya](mailto:officialelsa21@gmail.com) untuk pertanyaan, kerja sama, atau komentar. Saya sangat senang mendengar dari Anda.
 
