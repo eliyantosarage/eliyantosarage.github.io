@@ -15,6 +15,155 @@ a:hover {
   text-decoration: none;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0D6EFD;
+  padding: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.brand-name {
+  padding-left: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  padding-right: 10%;
+  display: flex;
+  margin: 0;
+}
+
+.nav-link {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-link a:hover {
+  color: #333;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #0D6EFD;
+  min-width: 160px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hero-section {
+  background-image: url('/assets/woman-drinking-coffee.png');
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  max-width: 1200px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  max-width: 1200px;
+}
+
+.hero-text {
+  color: #fff;
+}
+
+.purple-text {
+  color: #8e44ad;
+}
+
+.github-button {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  font-size: 18px;
+  padding: 10px 30px;
+  margin-top: 40px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.github-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.github-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #0D6EFD;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#back-to-top:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
 .header {
   text-align: center;
   padding: 20px 0;
@@ -164,7 +313,7 @@ a:hover {
 }
 
 .card a.btn:hover {
-  background-color: #007bff;
+  background-color: #0D6EFD;
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 4px 4px 8px rgba(122, 141, 174, 0.3), -4px -4px 8px rgba(255, 255, 255, 0.8);
@@ -189,11 +338,40 @@ a:hover {
   .card {
     flex: 0 0 calc(50% - 20px);
   }
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .brand-name {
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    padding-right: 0;
+    display: none;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    margin: 5px 10px;
+  }
 }
 
 @media (max-width: 576px) {
   .card {
     flex: 0 0 100%;
     margin: 10px 0;
+  }
+
+  .brand-name {
+    padding-left: 0;
+  }
+
+  .nav-links {
+    padding-right: 0;
   }
 }
