@@ -81,7 +81,7 @@ Di repositori ini, Anda akan menemukan beragam proyek yang mencakup berbagai bid
 ###
 - [<strong>Age Calculator</strong>](https://eliyantosarage.github.io/age-calculator/) :  Alat yang digunakan untuk menghitung usia seseorang berdasarkan tanggal lahir mereka. Dengan alat ini, pengguna dapat memasukkan tanggal lahir seseorang, dan Age Calculator akan secara otomatis menghitung berapa tahun, bulan, dan hari usia mereka saat ini.
 ###
-- [<strong>YouTube Thumbnail Downloader</strong>](https://eliyantosarage.github.io/youtube-thumbnail-downloader/) : adalah alat untuk mengunduh gambar miniatur dari video YouTube. Ini membantu pengguna mendapatkan gambar miniatur berkualitas tinggi untuk berbagi atau digunakan di situs web mereka.
+- [<strong>YouTube Thumbnail Downloader</strong>](https://eliyantosarage.github.io/youtube-thumbnail-downloader/) : Alat untuk mengunduh gambar miniatur dari video YouTube. Ini membantu pengguna mendapatkan gambar miniatur berkualitas tinggi untuk berbagi atau digunakan di situs web mereka.
 ###
 - [<strong>Migrating from GitHub to jsDelivr</strong>](https://eliyantosarage.github.io/migrating-from-github-to-jsdelivr/) : Migrasi dari GitHub ke jsDelivr adalah proses pemindahan sumber daya dan berkas dari GitHub ke jsDelivr untuk meningkatkan kinerja dan kecepatan akses. Proses migrasi ini melibatkan penggantian tautan berkas dari GitHub ke jsDelivr.
 ###
