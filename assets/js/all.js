@@ -1,8 +1,8 @@
 // Tentukan panjang maksimum teks yang diizinkan
 var maxLength = 150;
 
-// Pilih semua elemen dengan kelas "truncate-text"
-var elementsToTruncate = document.querySelectorAll(".truncate-text");
+// Pilih semua elemen dengan kelas "card-text"
+var elementsToTruncate = document.querySelectorAll(".card-text");
 
 // Lakukan perulangan untuk setiap elemen
 for (var i = 0; i < elementsToTruncate.length; i++) {
@@ -47,10 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // Tentukan jumlah kartu yang ditampilkan awalnya
 var displayedCards = 6;
 
-// Dapatkan elemen tombol "Muat Lebih Banyak" dan baris kartu
+// Dapatkan elemen tombol "Muat Lebih Banyak"
 var loadMoreButton = document.getElementById("load-more-button");
-var cardRow = document.getElementById("card-row");
-var allCards = cardRow.children;
+var allCards = document.querySelectorAll('.card');
 
 // Fungsi untuk memuat lebih banyak kartu
 function loadMoreCards() {
