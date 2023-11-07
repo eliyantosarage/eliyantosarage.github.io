@@ -9,141 +9,185 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/6.4.2_web/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/neumorphism.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend&display=swap">
     <button id="back-to-top"><i class="fa-solid fa-angles-up fa-bounce"></i></button>
   </head>
   <body>
-    <section class="navbar">
-      <span class="brand-name"><a href="/">Eliyanto Sarage</a></span>
-      <ul class="nav-links">
-        <li class="nav-link"><a href="/">Beranda</a></li>
-        <li class="dropdown">
-          <a class="nav-link" href="#">Guidebook <i class="fa-regular fa-angle-down"></i></a>
-          <div class="dropdown-content">
-            <a href="https://github.com/eliyantosarage/eliyantosarage.github.io/blob/main/CODE_OF_CONDUCT.md" target="_blank">Code of Conduct</a>
-            <a href="https://github.com/eliyantosarage/eliyantosarage.github.io/blob/main/LICENSE" target="_blank">License (MIT)</a>
-            <a href="https://github.com/eliyantosarage/eliyantosarage.github.io/blob/main/README.md" target="_blank">ReadMe</a>
-            <a href="https://github.com/eliyantosarage/eliyantosarage.github.io/blob/main/SECURITY.md" target="_blank">Security Policy</a>
+    <header class="header-global">
+      <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light headroom--not-bottom headroom--not-top headroom--pinned">
+        <div class="container position-relative">
+          <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="/index.html"><img class="navbar-brand-dark" src="assets/4proberbuwv3t2fjddyg6wnjya.png" alt="Logo light"> <img class="navbar-brand-light" src="/assets/4proberbuwv3t2fjddyg6wnjya.png" alt="Logo dark"></a>
+          <div class="navbar-collapse collapse" id="navbar_global">
+            <div class="navbar-collapse-header">
+              <div class="row">
+                <div class="col-6 collapse-brand"><a href="./index.html" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light"><img src="./assets/img/brand/dark.svg" alt="Themesberg logo"></a></div>
+                <div class="col-6 collapse-close"><a href="#navbar_global" class="fas fa-times" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a></div>
+              </div>
+            </div>
+            <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link" data-toggle="dropdown"><span class="nav-link-inner-text">Pages</span> <span class="fas fa-angle-down nav-link-arrow ml-2"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./html/pages/about.html">About</a></li>
+                  <li><a class="dropdown-item" href="./html/pages/pricing.html">Pricing</a></li>
+                  <li><a class="dropdown-item" href="./html/pages/profile.html">Profile</a></li>
+                  <li><a class="dropdown-item" href="./html/pages/services.html">Services</a></li>
+                  <li class="dropdown-submenu">
+                    <a href="#" class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center" aria-haspopup="true" aria-expanded="false">Blog <span class="fas fa-angle-right nav-link-arrow"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="./html/pages/blog.html" class="dropdown-item">Blog</a> <a href="./html/pages/blog-post.html" class="dropdown-item">Blog post</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-submenu">
+                    <a href="#" class="dropdown-toggle dropdown-item d-flex justify-content-between align-items-center" aria-haspopup="true" aria-expanded="false">Specials <span class="fas fa-angle-right nav-link-arrow"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="./html/pages/sign-in.html" class="dropdown-item">Sign in</a> <a href="./html/pages/sign-up.html" class="dropdown-item">Sign up</a> <a href="./html/pages/coming-soon.html" class="dropdown-item">Coming Soon</a> <a href="./html/pages/maintenance.html" class="dropdown-item">Maintenance</a> <a href="./html/pages/404.html" class="dropdown-item">404 Not Found</a> <a href="./html/pages/500.html" class="dropdown-item">500 Server Error</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="./html/pages/contact.html">Contact</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link" data-toggle="dropdown"><span class="nav-link-inner-text">Sections</span> <span class="fas fa-angle-down nav-link-arrow ml-2"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./html/sections/about.html">About</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/blog.html">Blog</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/clients.html">Clients</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/contact.html">Contact</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/features.html">Features</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/pricing.html">Pricing</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/team.html">Team</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/testimonials.html">Testimonials</a></li>
+                  <li><a class="dropdown-item" href="./html/sections/navbars.html">Navbars</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown mega-dropdown">
+                <a href="#" class="nav-link" data-toggle="dropdown"><span class="nav-link-inner-text">Components</span> <span class="fas fa-angle-down nav-link-arrow ml-2"></span></a>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-lg-6 inside-bg d-none d-lg-block">
+                      <div class="justify-content-center bg-primary text-white">
+                        <div class="px-6 pb-5 pt-3"><img src="/assets/megamenu-image.jpg" alt="Pixel Components"></div>
+                        <div class="z-2 pb-4 text-center"><a href="./html/components/all.html" class="btn btn-primary mb-2 mb-sm-0 mr-3 text-secondary"><span class="mr-1"><span class="fas fa-th-large"></span></span> All components </a><a href="https://themesberg.com/docs/neumorphism-ui/components/alerts" target="_blank" class="btn btn-primary mb-2 mb-sm-0"><span class="mr-1"><span class="fas fa-book"></span></span> Docs v1.0</a></div>
+                      </div>
+                    </div>
+                    <div class="col pl-0">
+                      <ul class="list-style-none">
+                        <li><a class="dropdown-item" href="./html/components/accordions.html">Accordions</a></li>
+                        <li><a class="dropdown-item" href="./html/components/alerts.html">Alerts</a></li>
+                        <li><a class="dropdown-item" href="./html/components/badges.html">Badges</a></li>
+                        <li><a class="dropdown-item" href="./html/components/bootstrap-carousels.html">Bootstrap Carousels</a></li>
+                        <li><a class="dropdown-item" href="./html/components/breadcrumbs.html">Breadcrumbs</a></li>
+                        <li><a class="dropdown-item" href="./html/components/buttons.html">Buttons</a></li>
+                        <li><a class="dropdown-item" href="./html/components/counters.html">Counters</a></li>
+                        <li><a class="dropdown-item" href="./html/components/cards.html">Cards</a></li>
+                        <li><a class="dropdown-item" href="./html/components/e-commerce.html">E-commerce</a></li>
+                      </ul>
+                    </div>
+                    <div class="col pl-0">
+                      <ul class="list-style-none">
+                        <li><a class="dropdown-item" href="./html/components/forms.html">Forms</a></li>
+                        <li><a class="dropdown-item" href="./html/components/icon-boxes.html">Icon Boxes</a></li>
+                        <li><a class="dropdown-item" href="./html/components/modals.html">Modals</a></li>
+                        <li><a class="dropdown-item" href="./html/components/navs.html">Navs</a></li>
+                        <li><a class="dropdown-item" href="./html/components/owl-carousels.html">Owl Carousels</a></li>
+                        <li><a class="dropdown-item" href="./html/components/pagination.html">Pagination</a></li>
+                        <li><a class="dropdown-item" href="./html/components/popovers.html">Popovers</a></li>
+                        <li><a class="dropdown-item" href="./html/components/progress-bars.html">Progress Bars</a></li>
+                      </ul>
+                    </div>
+                    <div class="col pl-0">
+                      <ul class="list-style-none">
+                        <li><a class="dropdown-item" href="./html/components/steps.html">Steps</a></li>
+                        <li><a class="dropdown-item" href="./html/components/tables.html">Tables</a></li>
+                        <li><a class="dropdown-item" href="./html/components/tabs.html">Tabs</a></li>
+                        <li><a class="dropdown-item" href="./html/components/toasts.html">Toasts</a></li>
+                        <li><a class="dropdown-item" href="./html/components/timelines.html">Timelines</a></li>
+                        <li><a class="dropdown-item" href="./html/components/tooltips.html">Tooltips</a></li>
+                        <li><a class="dropdown-item" href="./html/components/typography.html">Typography</a></li>
+                        <li><a class="dropdown-item" href="./html/components/widgets.html">Widgets</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link" data-toggle="dropdown"><span class="nav-link-inner-text">Support</span> <span class="fas fa-angle-down nav-link-arrow ml-2"></span></a>
+                <div class="dropdown-menu dropdown-menu-lg">
+                  <div class="col-auto px-0" data-dropdown-content="">
+                    <div class="list-group list-group-flush">
+                      <a href="https://themesberg.com/docs/neumorphism-ui/getting-started/quick-start/" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
+                        <span class="icon icon-sm icon-secondary"><span class="fas fa-file-alt"></span></span>
+                        <div class="ml-4"><span class="text-dark d-block">Documentation<span class="badge badge-sm badge-secondary ml-2">v1.0</span></span> <span class="small">Examples and guides</span></div>
+                      </a>
+                      <a href="https://themesberg.com/contact" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
+                        <span class="icon icon-sm icon-secondary"><span class="fas fa-microphone-alt"></span></span>
+                        <div class="ml-4"><span class="text-dark d-block">Support</span> <span class="small">Looking for answers? Ask us!</span></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-        </li>
-      </ul>
-    </section>
+          <div class="d-flex align-items-center"><button class="btn btn-pill btn-github" type="button"><span class="mr-1"><span class="fa-brands fa-github"></span></span> View on GitHub</button> <button class="navbar-toggler ml-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
     <section class="hero-section">
-      <h1 class="hero-text">Welcome to <span class="color-hero-text">.repository</span> of
+      <h1 class="hero-text">Welcome to <span class="custom-color">.repository</span> of
         Eliyanto Sarage
       </h1>
       <p>Every project has a unique story behind it, from the initial concept to the stunning final result.</p>
-      <a class="github-button" href="https://github.com/eliyantosarage/eliyantosarage.github.io" target="_blank">
-      <i class="github-icon fa-brands fa-github"></i>
-      View on GitHub
-      </a>
     </section>
-    <section class="container">
-      <div class="header-title">
-        <h2 class="mb-4">My <span class="color-hero-text">Project</span></h2>
-      </div>
-      <div class="row" id="card-row">
-        <div class="col-md-4">
-          <div class="card" id="card1">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/e-astekpam/" target="_blank">E-ASTEKPAM</a></h5>
-            <p class="card-text truncate-text">Sistem elektronik untuk laporan Apel Serah Terima Regu Pengamanan. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.</p>
-            <a href="https://eliyantosarage.github.io/e-astekpam/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
+    <div class="section section-lg">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <h2 class="h5 mb-6">Blog Cards</h2>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card" id="card2">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/pemanggilan-wbp/" target="_blank">PEMANGGILAN WBP</a></h5>
-            <p class="card-text truncate-text">Aplikasi web sederhana yang dirancang untuk memudahkan petugas Lapas/Rutan dalam memanggil Warga Binaan Pemasyarakatan (WBP) yang sedang dikunjungi oleh keluarga mereka. Aplikasi ini menggunakan teknologi Text-to-Speech untuk mengonversi nama WBP menjadi suara yang dapat didengar oleh pengunjung dan WBP.</p>
-            <a href="https://eliyantosarage.github.io/pemanggilan-wbp/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
+        <div class="row mb-5">
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card bg-primary border-light shadow-soft">
+              <img src="https://placehold.co/600x400/f0f0f0/31344B?font=source-sans-pro&text=E-ASTEKPAM" class="card-img-top rounded-top" alt="Themesberg office">
+              <div class="card-body">
+                <span class="h6 icon-tertiary small"><span class="fas fa-medal mr-2"></span>CSS, HTML, JavaScript</span>
+                <h3 class="h5 card-title mt-3">E-ASTEKPAM</h3>
+                <p class="card-text">Sistem elektronik untuk laporan Apel Serah Terima Regu Pengamanan. Cepat, terstruktur, catat unit, tanggal, peralatan, arahan. Fasilitasi transisi keamanan.</p>
+                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card3">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/google-drive-direct-link-generator/" target="_blank">Google Drive Direct Link Generator</a></h5>
-            <p class="card-text truncate-text">Memungkinkan pengguna untuk membuat tautan langsung ke berkas atau folder di Google Drive tanpa perlu memberikan akses ke seluruh akun Google Drive mereka. Dengan ini, pengguna dapat berbagi file dengan mudah dan aman.</p>
-            <a href="https://eliyantosarage.github.io/google-drive-direct-link-generator/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card bg-primary border-light shadow-soft">
+              <div class="card-body">
+                <span class="h6 icon-tertiary small"><span class="fas fa-medal mr-2"></span>Awards</span>
+                <h3 class="h5 card-title mt-3">We partnered up with Google</h3>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card4">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/image-converter/" target="_blank">Image Converter</a></h5>
-            <p class="card-text truncate-text">Mengubah format gambar dari satu jenis ke jenis lainnya, berguna untuk berbagai keperluan seperti situs web, pencetakan, atau media sosial.</p>
-            <a href="https://eliyantosarage.github.io/image-converter/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card5">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/link-extractor/" target="_blank">Link Extractor</a></h5>
-            <p class="card-text truncate-text">Mengambil tautan atau URL dari halaman web atau dokumen teks.</p>
-            <a href="https://eliyantosarage.github.io/link-extractor/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card6">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/live-html-preview/" target="_blank">Live HTML Preview</a></h5>
-            <p class="card-text truncate-text">Memungkinkan pengguna untuk melihat tampilan langsung dari kode HTML yang mereka tulis atau edit tanpa perlu menyimpannya terlebih dahulu. Berguna untuk pengembang web dan desainer untuk menguji dan perbaiki tampilan halaman web secara instan sebelum dipublikasikan secara online.</p>
-            <a href="https://eliyantosarage.github.io/live-html-preview/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card7">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/password-generator/" target="_blank">Password Generator</a></h5>
-            <p class="card-text truncate-text">Menciptakan kata sandi kuat dan aman secara otomatis dengan berbagai kombinasi karakter. Berguna untuk melindungi akun dan informasi pribadi dari ancaman keamanan.</p>
-            <a href="https://eliyantosarage.github.io/password-generator/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card8">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/whatsapp-chat-generator/" target="_blank">Whatsapp Chat Generator</a></h5>
-            <p class="card-text truncate-text">Memungkinkan pengguna untuk membuat tautan teks khusus yang membuka percakapan WhatsApp tertentu. Tautan ini memudahkan komunikasi melalui WhatsApp dengan cepat.</p>
-            <a href="https://eliyantosarage.github.io/whatsapp-chat-generator/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card9">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/age-calculator/" target="_blank">Age Calculator</a></h5>
-            <p class="card-text truncate-text">Menghitung usia seseorang berdasarkan tanggal lahir mereka. Dengan alat ini, pengguna dapat memasukkan tanggal lahir seseorang, dan Age Calculator akan secara otomatis menghitung berapa tahun, bulan, dan hari usia mereka saat ini.</p>
-            <a href="https://eliyantosarage.github.io/age-calculator/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card10">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/youtube-thumbnail-downloader/" target="_blank">YouTube Thumbnail Downloader</a></h5>
-            <p class="card-text truncate-text">Mengunduh gambar miniatur dari video YouTube. Ini membantu pengguna mendapatkan gambar miniatur berkualitas tinggi untuk berbagi atau digunakan di situs web mereka.</p>
-            <a href="https://eliyantosarage.github.io/youtube-thumbnail-downloader/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card11">
-            <span class="badge badge-html">HTML</span>
-            <h5 class="card-title text-uppercase"><a href="https://eliyantosarage.github.io/migrating-from-github-to-jsdelivr/" target="_blank">Migrating from GitHub to jsDelivr</a></h5>
-            <p class="card-text truncate-text">Memproses pemindahan sumber daya dan berkas dari GitHub ke jsDelivr untuk meningkatkan kinerja dan kecepatan akses. Proses migrasi ini melibatkan penggantian tautan berkas dari GitHub ke jsDelivr.</p>
-            <a href="https://eliyantosarage.github.io/migrating-from-github-to-jsdelivr/" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" id="card12">
-            <span class="badge badge-javascript">JavaScript</span>
-            <h5 class="card-title text-uppercase"><a href="https://github.com/eliyantosarage/instagram-auto-liker-js" target="_blank">Instagram Auto Liker with JavaScript</a></h5>
-            <p class="card-text truncate-text">Alat berbasis JavaScript yang secara otomatis "menyukai" posting Instagram. Tujuannya adalah untuk meningkatkan keterlibatan dan popularitas akun dengan secara otomatis menyukai posting.</p>
-            <a href="https://github.com/eliyantosarage/instagram-auto-liker-js" target="_blank" class="btn">Lihat Project <i class="fa-regular fa-rabbit-running"></i></a>
+          <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card bg-primary border-light shadow-soft">
+              <div class="card-body">
+                <span class="h6 icon-tertiary small"><span class="fas fa-medal mr-2"></span>Awards</span>
+                <h3 class="h5 card-title mt-3">We partnered up with Google</h3>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <button id="load-more-button" class="btn btn-primary"><i class="fa-solid fa-chevrons-down fa-bounce"></i></button>
-    </section>
+    </div>
     <section class="footer">
       <div class="social-icons">
         <a href="https://www.facebook.com/eliyantosarage0" target="_blank" rel="noopener noreferrer" class="facebook"><i class="fa-brands fa-facebook fa-flip-horizontal"></i></a>
@@ -154,7 +198,21 @@
       <span>Copyright © 2023 <a href="https://ekatalendra.com/" target="_blank">Ekatalendra</a> - All Rights Reserved</span>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/all.js"></script>
+    <script src="/assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="/assets/js/buttons.js"></script>
+    <script src="/assets/js/headroom.min.js"></script>
+    <script src="/assets/js/jarallax.min.js"></script>
+    <script src="/assets/js/jquery.countdown.min.js"></script>
+    <script src="/assets/js/jquery.counterup.min.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.waypoints.js"></script>
+    <script src="/assets/js/neumorphism.js"></script>
+    <script src="/assets/js/nouislider.min.js"></script>
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/prism.min.js"></script>
+    <script src="/assets/js/smooth-scroll.polyfills.min.js"></script>
     <script>
       function setCardHeight() {
         const cards = document.querySelectorAll('.card');
@@ -172,79 +230,7 @@
         });
       }
       
-      const navbar = document.querySelector('.navbar');
-      const heroSection = document.querySelector('.hero-section');
-      const heroSectionHeight = heroSection.clientHeight;
-      
-      function handleScroll() {
-        if (window.scrollY > heroSectionHeight) {
-          navbar.classList.add('fixed-top');
-        } else {
-          navbar.classList.remove('fixed-top');
-        }
-      }
-      
       window.addEventListener('load', setCardHeight);
-      window.addEventListener('scroll', handleScroll);
-      
-      var maxLength = 150;
-      
-      var elementsToTruncate = document.querySelectorAll(".truncate-text");
-      
-      for (var i = 0; i < elementsToTruncate.length; i++) {
-        var cardTextElement = elementsToTruncate[i];
-      
-        if (cardTextElement.textContent.length > maxLength) {
-          var truncatedText = cardTextElement.textContent.substring(0, maxLength);
-      
-          if (truncatedText.length < cardTextElement.textContent.length) {
-            truncatedText += "...";
-          }
-      
-          cardTextElement.textContent = truncatedText;
-        }
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        var button = document.getElementById("back-to-top");
-      
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 300) {
-            button.style.display = "block";
-          } else {
-            button.style.display = "none";
-          }
-        });
-      
-        button.addEventListener("click", function () {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-      });
-      
-      var displayedCards = 6;
-      var loadMoreButton = document.getElementById("load-more-button");
-      var cardRow = document.getElementById("card-row");
-      var allCards = cardRow.children;
-      
-      function loadMoreCards() {
-        for (var i = displayedCards; i < displayedCards + 6; i++) {
-          if (i < allCards.length) {
-            allCards[i].style.display = "block";
-          } else {
-            loadMoreButton.style.display = "none";
-            break;
-          }
-        }
-        displayedCards += 6;
-      }
-      
-      for (var i = displayedCards; i < allCards.length; i++) {
-        allCards[i].style.display = "none";
-      }
-      
-      loadMoreButton.addEventListener("click", loadMoreCards);
     </script>
   </body>
 </html>
