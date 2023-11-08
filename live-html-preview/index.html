@@ -235,7 +235,7 @@
           previewWindow = window.open();
           previewWindow.document.open();
           previewWindow.document.write('<!DOCTYPE html><html><head><title>Pratinjau</title></head><body>');
-          previewWindow.document.write(code);
+          previewWindow.document.write('<iframe srcdoc="' + code + '"></iframe>');
           previewWindow.document.write('</body></html>');
           previewWindow.document.close();
         }
