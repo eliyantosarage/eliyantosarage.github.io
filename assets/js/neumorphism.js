@@ -508,7 +508,7 @@ $(document).ready(function () {
     $('[data-bind-characters-target]').each(function () {
         var $text = $($(this).attr('data-bind-characters-target'));
         var maxCharacters = parseInt($(this).attr('maxlength'));
-        $text.text(maxCharacters);
+        $text.text($.text(maxCharacters.toString()));
 
         $(this).on('keyup change', function (e) {
             var string = $(this).val();
