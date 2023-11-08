@@ -506,17 +506,17 @@ $(document).ready(function () {
 
     // update target element content to match number of characters
     $('[data-bind-characters-target]').each(function () {
-        var $text = $($(this).attr('data-bind-characters-target'));
+        var $targetElement = $($(this).data('bind-characters-target'));
         var maxCharacters = parseInt($(this).attr('maxlength'));
-        $text.text($.text(maxCharacters.toString()));
-
-        $(this).on('keyup change', function (e) {
+        $targetElement.text(maxCharacters.toString());
+    
+        $(this).on('input', function (e) {
             var string = $(this).val();
             var characters = string.length;
             var charactersRemaining = maxCharacters - characters;
-            $text.text(charactersRemaining);
-        })
-    });
+            $targetElement.text(charactersRemaining);
+        });
+    });    
 
     // copy docs
     $('.copy-docs').on('click', function () {
