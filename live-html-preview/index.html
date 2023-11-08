@@ -176,7 +176,7 @@
     </div>
     <script>
       var previewWindow;
-
+      
       function updatePreview() {
         var code = document.getElementById('code').value;
         var previewFrame = document.getElementById('preview');
@@ -234,15 +234,15 @@
         var code = document.getElementById('code').value;
         if (previewWindow && !previewWindow.closed) {
           previewWindow.document.open();
-          previewWindow.document.write(code);
+          previewWindow.document.write('<pre>' + code + '</pre>');
           previewWindow.document.close();
         } else {
           previewWindow = window.open();
           previewWindow.document.open();
-          previewWindow.document.write(code);
+          previewWindow.document.write('<pre>' + code + '</pre>');
           previewWindow.document.close();
         }
-      }
+      }      
       
       function clearCode() {
         document.getElementById('code').value = '';
