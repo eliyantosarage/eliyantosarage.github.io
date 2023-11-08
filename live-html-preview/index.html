@@ -233,14 +233,13 @@
       function openPreview() {
         var code = document.getElementById('code').value;
         if (previewWindow && !previewWindow.closed) {
-          previewWindow.document.open();
-          previewWindow.document.write('<pre>' + code + '</pre>');
-          previewWindow.document.close();
+          previewWindow.document.getElementById('preview-content').value = code;
         } else {
           previewWindow = window.open();
           previewWindow.document.open();
-          previewWindow.document.write('<pre>' + code + '</pre>');
+          previewWindow.document.write('<textarea id="preview-content" readonly></textarea>');
           previewWindow.document.close();
+          previewWindow.document.getElementById('preview-content').value = code;
         }
       }      
       
