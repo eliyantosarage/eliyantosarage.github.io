@@ -230,17 +230,12 @@
       function openPreview() {
         var code = document.getElementById('code').value;
         if (previewWindow && !previewWindow.closed) {
-          previewWindow.document.documentElement.innerHTML = '';
-          var iframe = document.createElement('iframe');
-          iframe.srcdoc = code;
-          previewWindow.document.body.appendChild(iframe);
+          previewWindow.document.documentElement.innerHTML = code;
         } else {
           previewWindow = window.open();
           previewWindow.document.open();
           previewWindow.document.write('<!DOCTYPE html><html><head><title>Pratinjau</title></head><body>');
-          var iframe = document.createElement('iframe');
-          iframe.srcdoc = code;
-          previewWindow.document.body.appendChild(iframe);
+          previewWindow.document.write(code);
           previewWindow.document.write('</body></html>');
           previewWindow.document.close();
         }
