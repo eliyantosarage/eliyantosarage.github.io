@@ -180,24 +180,20 @@
       function updatePreview() {
         var code = document.getElementById('code').value;
         var previewFrame = document.getElementById('preview');
-      
-        while (previewFrame.firstChild) {
-          previewFrame.removeChild(previewFrame.firstChild);
-        }
-      
-        var textNode = document.createTextNode(code);
-        previewFrame.appendChild(textNode);
-      }
+        previewFrame.srcdoc = code;
+      }      
       
       function loadCode() {
         var url = document.getElementById('url').value;
         if (url) {
+          // Menampilkan progress bar
           var progressBar = document.getElementById('progressBar');
           progressBar.innerHTML = '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div></div>';
       
           fetch(url)
             .then(response => response.text())
             .then(data => {
+              // Menghilangkan progress bar setelah selesai
               progressBar.innerHTML = '';
       
               document.getElementById('code').value = data;
@@ -210,44 +206,46 @@
       }
       
       function copyToClipboard() {
-        var code = document.getElementById('code').value;
-        var notification = document.createElement('div');
-        notification.innerHTML = '<span class="notification-text">Kode disalin ke clipboard!</span>';
-        notification.classList.add('notification');
-        document.body.appendChild(notification);
+      var code = document.getElementById('code').value;
+      var notification = document.createElement('div');
+      notification.innerHTML = '<span class="notification-text">Kode disalin ke clipboard!</span>';
+      notification.classList.add('notification');
+      document.body.appendChild(notification);
       
-        setTimeout(function () {
-          notification.remove();
-        }, 3000);
+      // Mengatur waktu penghapusan notifikasi setelah beberapa detik
+      setTimeout(function () {
+      notification.remove();
+      }, 3000);
       
-        navigator.clipboard
-          .writeText(code)
-          .then(() => {
-            // ...
-          })
-          .catch(error => {
-            console.error('Error:', error);
-          });
+      navigator.clipboard
+      .writeText(code)
+      .then(() => {
+        // ...
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
       }
       
       function openPreview() {
         var code = document.getElementById('code').value;
         if (previewWindow && !previewWindow.closed) {
-          previewWindow.document.getElementById('preview-content').value = code;
+          previewWindow.document.open();
+          previewWindow.document.write(code);
+          previewWindow.document.close();
         } else {
           previewWindow = window.open();
           previewWindow.document.open();
-          previewWindow.document.write('<textarea id="preview-content" readonly></textarea>');
+          previewWindow.document.write(code);
           previewWindow.document.close();
-          previewWindow.document.getElementById('preview-content').value = code;
         }
-      }      
+      }
       
       function clearCode() {
         document.getElementById('code').value = '';
         document.getElementById('url').value = '';
         updatePreview();
-      }      
+      }
     </script>
   </body>
 </html>
