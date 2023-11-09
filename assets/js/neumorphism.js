@@ -1,20 +1,3 @@
-/*
-
-=========================================================
-* Neumorphism UI Kit Pro - v1.0.0
-=========================================================
-
-* Product Page: https://themesberg.com/product/ui-kits/neumorphism-ui-pro
-* Copyright 2020 Themesberg (https://www.themesberg.com/licensing)
-
-* Coded by https://themesberg.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 "use strict";
 $(document).ready(function () {
 
