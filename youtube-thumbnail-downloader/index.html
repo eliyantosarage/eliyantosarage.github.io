@@ -226,11 +226,11 @@
       function downloadThumbnails() {
         const youtubeUrl = document.getElementById("youtubeUrl").value;
         const videoId = extractVideoId(youtubeUrl);
-      
+
         const notifikasi = document.getElementById("notifikasi");
         const thumbnailContainer = document.querySelector(".thumbnail-container");
         thumbnailContainer.innerHTML = '';
-      
+
         if (videoId) {
           const resolutions = ["maxresdefault", "sddefault", "hqdefault", "mqdefault", "default"];
           resolutions.forEach((resolution, index) => {
@@ -238,16 +238,16 @@
             // Membuat container untuk thumbnail
             const thumbnailDiv = document.createElement("div");
             thumbnailDiv.classList.add("thumbnail");
-      
+
             // Membuat elemen gambar
             const thumbnailImage = document.createElement("img");
-            thumbnailImage.src = url;
+            thumbnailImage.src = encodeURI(url);
             thumbnailImage.alt = `Thumbnail Video (Resolusi ${index + 1})`;
             thumbnailImage.classList.add("thumbnail-image");
             
             // Membuat tombol download
             const downloadButton = document.createElement("a");
-            downloadButton.href = url;
+            downloadButton.href = encodeURI(url);
             downloadButton.download = `Thumbnail_${videoId}_${resolution}.jpg`;
             downloadButton.classList.add("btn", "btn-primary", "download-button");
             downloadButton.textContent = `Download (${resolution})`;
@@ -256,7 +256,7 @@
             // Menambahkan elemen ke dalam container thumbnail
             thumbnailDiv.appendChild(thumbnailImage);
             thumbnailDiv.appendChild(downloadButton);
-      
+
             // Menambahkan container thumbnail ke dalam thumbnail container
             thumbnailContainer.appendChild(thumbnailDiv);
           });
