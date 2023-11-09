@@ -245,17 +245,24 @@
       
                   // Membuat elemen gambar
                   const thumbnailImage = document.createElement("img");
-                  thumbnailImage.src = url;
+
+                  // Pastikan URL aman dengan encodeURIComponent
+                  const safeUrl = encodeURIComponent(url);
+                  
+                  thumbnailImage.src = safeUrl;
                   thumbnailImage.alt = `Thumbnail Video (Resolusi ${index + 1})`;
-                  thumbnailImage.classList.add("thumbnail-image");
+                  thumbnailImage.classList.add("thumbnail-image");                  
       
-                  // Membuat tautan download
                   const downloadButton = document.createElement("a");
-                  downloadButton.href = url;
+
+                  // Pastikan URL aman dengan encodeURIComponent
+                  const safeUrl = encodeURIComponent(url);
+                  
+                  downloadButton.href = safeUrl;
                   downloadButton.download = `Thumbnail_${videoId}_${resolutions[index]}.jpg`;
                   downloadButton.classList.add("btn", "btn-primary", "download-button");
                   downloadButton.textContent = `Download (${resolutions[index]})`;
-                  downloadButton.target = "_blank";
+                  downloadButton.target = "_blank";                  
       
                   // Menambahkan elemen ke dalam container thumbnail
                   thumbnailDiv.appendChild(thumbnailImage);
