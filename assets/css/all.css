@@ -2,13 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700;800&display=swap');
 
 /* Custom CSS */
-.container h2 {
-  letter-spacing: 2px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 36px;
+.display-1,.display-2,.display-3,.display-4 {
   color: #31344B;
-  margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -159,8 +154,6 @@
 .social-icons {
   background-color: transparent;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .social-icons a {
