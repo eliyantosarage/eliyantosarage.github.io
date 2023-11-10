@@ -3,6 +3,7 @@
 
 /* Custom CSS */
 .display-1,.display-2,.display-3,.display-4 {
+  font-weight: bold;
   color: #31344B;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -85,7 +86,7 @@
 
 /* Hero Section */
 .hero-section {
-  background-image: url('/assets/woman-drinking-coffee.png');
+  background-image: url('/assets/img/woman-drinking-coffee.png');
   background-attachment: fixed;
   background-size: cover;
   height: 100vh;
