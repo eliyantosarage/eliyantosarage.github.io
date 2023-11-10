@@ -47,9 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // Tentukan jumlah kartu yang ditampilkan awalnya
 var displayedCards = 6;
 
+// Tentukan jumlah kartu yang ditampilkan awalnya
+var displayedCards = 6;
+
 // Dapatkan elemen tombol "Muat Lebih Banyak"
 var loadMoreButton = document.getElementById("load-more-button");
-var allCards = document.querySelectorAll('.card');
+var allCards = document.querySelectorAll('div.col-12.col-md-6.col-lg-4.mb-5');
 
 // Fungsi untuk memuat lebih banyak kartu
 function loadMoreCards() {
@@ -62,6 +65,11 @@ function loadMoreCards() {
     }
   }
   displayedCards += 6;
+
+  // Periksa apakah semua kartu telah ditampilkan
+  if (displayedCards >= allCards.length) {
+    loadMoreButton.style.display = "none";
+  }
 }
 
 // Sembunyikan kartu-kartu yang tidak ditampilkan pada awalnya
