@@ -16,6 +16,10 @@
   color: #2d4cc8;
 }
 
+input:focus {
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff !important;
+}
+
 /* Scroll bar neumorphism */
 ::-webkit-scrollbar {
   width: 12px;
