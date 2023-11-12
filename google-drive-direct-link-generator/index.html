@@ -3,203 +3,147 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Drive Direct Link Generator</title>
-    <link rel="icon" href="/assets/4proberbuwv3t2fjddyg6wnjya.png" type="image/png" sizes="any">
+    <title>Google Drive Direct Link Generator - Eliyanto Sarage</title>
+    <meta name="description" content="Alat yang memungkinkan pengguna untuk membuat tautan langsung ke berkas atau folder di Google Drive tanpa perlu memberikan akses ke seluruh akun Google Drive mereka. Dengan ini, pengguna dapat berbagi file dengan mudah dan aman.">
+    <meta property="og:title" content="Google Drive Direct Link Generator - Eliyanto Sarage">
+    <meta property="og:description" content="Alat yang memungkinkan pengguna untuk membuat tautan langsung ke berkas atau folder di Google Drive tanpa perlu memberikan akses ke seluruh akun Google Drive mereka. Dengan ini, pengguna dapat berbagi file dengan mudah dan aman.">
+    <meta property="og:image" content="https://placehold.co/1200x627/e6e7ee/31344B?font=source-sans-pro&text=GOOGLE+DRIVE\nDIRECT+LINK+GENERATOR">
+    <meta property="og:url" content="https://eliyantosarage.github.io/google-drive-direct-link-generator/">
+    <link rel="icon" href="/assets/img/logo.png" type="image/png" sizes="any">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/6.4.2_web/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&display=swap">
+    <link rel="stylesheet" href="/assets/css/neumorphism.css">
     <style>
-      body {
-      background-color: #f0f0f0;
-      font-family: 'Lexend', sans-serif;
-      margin: 0 auto;
-      padding: 0;
-      max-width: 800px;
-      }
-      a, a:hover {
-      text-decoration: none;
-      }
-      .header {
-      text-align: center;
-      background-color: transparent;
-      color: #555;
-      padding: 20px;
-      border-radius: 10px 10px 0 0;
-      }
-      .header h1 {
-      font-size: 36px;
+      @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+      h1 {
       font-family: 'Lexend Deca', sans-serif;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
+      font-weight: 700;
       }
-      .container {
-      border-radius: 20px;
-      background-color: #f9f9f9;
-      box-shadow: 5px 5px 15px #cbcbcb, -5px -5px 15px #ffffff;
-      padding: 20px;
+      .breadcrumb-item::before,
+      .breadcrumb-item::after {
+      display: none !important;
       }
-      label {
-      display: block;
-      text-align: center;
-      }
-      input[type="text"] {
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: inset 5px 5px 10px #cbcbcb, inset -5px -5px 10px #ffffff;
-      margin-bottom: 15px;
-      }
-      .btn-primary {
-      font-size: 18px;
-      background-color: #337ab7;
-      padding: 10px 30px;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
-      }
-      .btn-primary:hover {
-      background-color: #286090;
-      }
-      .btn-success {
-      border: none;
-      border-radius: 5px;
-      box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
-      }
-      .copy-success-message {
-      text-align: center;
-      display: none;
-      color: green;
-      font-size: 14px;
-      margin-top: 5px;
-      }
-      .center-button {
-      text-align: center;
-      }
-      .footer {
-      text-align: center;
-      margin-top: 20px;
-      background-color: transparent;
-      color: #555;
-      padding: 10px;
-      border-radius: 0 0 10px 10px;
-      }
-      .footer a {
+      .fa-chevrons-right {
       font-size: 12px;
-      letter-spacing: 2px;
-      color: #333;
-      background-color: transparent;
-      padding: 5px 20px;
-      border-radius: 5px;
-      border: 1px dashed #ccc;
-      position: relative;
-      overflow: hidden;
-      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
-      }
-      .footer a::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 0;
-      background-color: #555;
-      transition: height 0.3s;
-      z-index: -1;
-      }
-      .footer a:hover {
-      color: #fff;
-      border: 1px solid #555;
-      border-radius: 5px;
-      }
-      .footer a:hover::before {
-      height: 100%;
       }
     </style>
   </head>
-  <body data-rsssl="1">
-    <div class="header">
-      <h1>Google Drive Direct Link Generator</h1>
+  <body>
+    <div class="container p-3">
+      <h1 class="text-center">Google Drive Direct Link Generator</h1>
     </div>
-    <div class="container">
-      <form id="generateForm">
-        <div class="form-group">
-          <label for="fileUrl" class="mb-2"><strong>Google Drive File URL / ID:</strong></label>
-          <input type="text" class="form-control" id="fileUrl" placeholder="Masukkan URL atau ID Google Drive" required />
-        </div>
-        <div class="center-button">
-          <button type="submit" class="btn btn-primary">Generate Direct Link</button>
-        </div>
-      </form>
-      <div id="result" style="display: none;">
-        <label for="directLink" class="mb-2 mt-4"><strong>Tautan Langsung:</strong></label>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" id="directLink" readonly />
-          <div class="input-group-append">
-            <button class="btn btn-success" id="copyButton" type="button">Salin</button>
+    </header>
+    <div class="container p-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-gray breadcrumb-transparent justify-content-center">
+          <li class="breadcrumb-item">
+            <a href="https://eliyantosarage.github.io/">
+            <i class="fa-duotone fa-house mr-2"></i>
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <i class="fa-solid fa-chevrons-right mr-2"></i>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Google Drive Direct Link Generator</li>
+        </ol>
+      </nav>
+    </div>
+    <section class="section section-lg d-flex align-items-center p-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-12">
+            <div class="card bg-primary shadow-soft border-light p-4">
+              <form id="generateForm">
+                <div class="form-group text-center">
+                  <label for="fileUrl" class="mb-2">
+                    <p class="h5">
+                      <strong>Google Drive File URL / ID:</strong>
+                    </p>
+                  </label>
+                  <input type="text" class="form-control" id="fileUrl" placeholder="Masukkan URL atau ID Google Drive" required />
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-pill btn-primary border border-light">Generate Direct Link</button>
+                </div>
+              </form>
+              <div id="result" class="text-center mt-4" style="display: none;">
+                <label for="directLink" class="mb-2">
+                  <p class="h5">
+                    <strong>Tautan Langsung:</strong>
+                  </p>
+                </label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="directLink" readonly />
+                  <div class="input-group-append">
+                    <button class="btn btn-primary text-secondary shadow-inset" id="copyButton" type="button">Salin</button>
+                  </div>
+                </div>
+                <div class="copy-success-message mt-4" id="copySuccessMessage"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="copy-success-message" id="copySuccessMessage"></div>
       </div>
-    </div>
-    <div class="footer">
-      <p class="copyright"><a href="https://eliyantosarage.github.io/" target="_blank"><i class="fa-brands fa-github"></i> eliyantosarage.github.io</a></p>
-    </div>
-    <!-- jQuery, Popper.js, Bootstrap JS -->
+    </section>
+    <footer class="text-center py-3">
+      <p>Copyright &copy; 2023 <a href="https://eliyantosarage.github.io/">Eliyanto Sarage</a>. All Rights Reserved. </p>
+    </footer>
+    <script src="/assets/js/featured.js"></script>
+    <script src="/assets/js/neumorphism.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script>
-      document.getElementById("generateForm").addEventListener("submit", function (event) {
-       event.preventDefault();
-       generateDirectLink();
+      document.getElementById("generateForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        generateDirectLink();
       });
-      document.getElementById("copyButton").addEventListener("click", function () {
-       copyDirectLink();
+      document.getElementById("copyButton").addEventListener("click", function() {
+        copyDirectLink();
       });
       
       function generateDirectLink() {
-       var fileUrl = document.getElementById("fileUrl").value;
-       var fileId = getFileId(fileUrl);
-       var directLink = generateLink(fileId);
-       displayDirectLink(directLink);
+        var fileUrl = document.getElementById("fileUrl").value;
+        var fileId = getFileId(fileUrl);
+        var directLink = generateLink(fileId);
+        displayDirectLink(directLink);
       }
       
       function getFileId(fileUrl) {
-       var regex = /\/d\/([a-zA-Z0-9_-]+)/;
-       var match = fileUrl.match(regex);
-       if (match && match[1]) {
-        return match[1];
-       }
-       return fileUrl;
+        var regex = /\/d\/([a-zA-Z0-9_-]+)/;
+        var match = fileUrl.match(regex);
+        if (match && match[1]) {
+          return match[1];
+        }
+        return fileUrl;
       }
       
       function generateLink(fileId) {
-       return "https://drive.google.com/uc?export=download&id=" + fileId;
+        return "https://drive.google.com/uc?export=download&id=" + fileId;
       }
       
       function displayDirectLink(directLink) {
-       var directLinkInput = document.getElementById("directLink");
-       directLinkInput.value = directLink;
-       document.getElementById("result").style.display = "block";
+        var directLinkInput = document.getElementById("directLink");
+        directLinkInput.value = directLink;
+        document.getElementById("result").style.display = "block";
       }
       
       function copyDirectLink() {
-       var directLinkInput = document.getElementById("directLink");
-       directLinkInput.select();
-       directLinkInput.setSelectionRange(0, 99999);
-       document.execCommand("copy");
-       showCopySuccessMessage();
+        var directLinkInput = document.getElementById("directLink");
+        directLinkInput.select();
+        directLinkInput.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        showCopySuccessMessage();
       }
       
       function showCopySuccessMessage() {
-       var copySuccessMessage = document.getElementById("copySuccessMessage");
-       copySuccessMessage.style.display = "block";
-       copySuccessMessage.textContent = "URL telah disalin ke clipboard!";
-       setTimeout(function () {
-        copySuccessMessage.style.display = "none";
-       }, 3000);
+        var copySuccessMessage = document.getElementById("copySuccessMessage");
+        copySuccessMessage.style.display = "block";
+        copySuccessMessage.textContent = "URL telah disalin ke clipboard!";
+        setTimeout(function() {
+          copySuccessMessage.style.display = "none";
+        }, 3000);
       }
     </script>
   </body>
