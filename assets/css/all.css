@@ -8,10 +8,6 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.fa-flip-horizontal {
-  animation: flip-horizontal 6s infinite;
-}
-
 .custom-color {
   color: #2d4cc8;
 }
@@ -106,7 +102,8 @@ input:focus {
 .hero-section h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  max-width: 1200px;
+  max-width: 600px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-section p {
@@ -135,69 +132,6 @@ input:focus {
   text-align: center;
   margin: 0 auto;
   display: block;
-}
-
-/* Footer */
-.footer {
-  background-color: #e5e5e5;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.footer span {
-  text-align: center;
-  font-size: 14px;
-  color: #31344B;
-  margin: 0;
-}
-
-.footer a:hover {
-  color: #2d4cc8;
-}
-
-/* Social icons */
-.social-icons {
-  background-color: transparent;
-  text-align: center;
-}
-
-.social-icons a {
-  background-color: #e6e7ee;
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 24px;
-  color: #31344B;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  box-shadow: -3px -3px 6px rgba(255, 255, 255, 1), 3px 3px 6px rgba(0, 0, 0, 0.2);
-  transition: all .2s ease-in-out;
-}
-
-.social-icons a:hover {
-  transform: translateY(-2px);
-}
-
-.social-icons a.facebook:hover {
-  background-color: #1877f2;
-  color: #fff;
-}
-
-.social-icons a.twitter:hover {
-  background-color: #1da1f2;
-  color: #fff;
-}
-
-.social-icons a.instagram:hover {
-  background-color: #e4405f;
-  color: #fff;
-}
-
-.social-icons a.github:hover {
-  background-color: #31344B;
-  color: #fff;
 }
 
 /* Back to top */
