@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
+body {
+  overflow-x: hidden !important;
+}
+
 h1 {
   font-family: 'Lexend Deca', sans-serif !important;
   letter-spacing: 1px !important;
@@ -17,4 +21,8 @@ h1 {
 
 input:focus {
   box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff !important;
+}
+
+footer p {
+  font-size: 12px !important;
 }
