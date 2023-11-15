@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700;800&display=swap');
 
 /* Custom CSS */
+body {
+  overflow-x: hidden !important;
+}
+
 .display-1,.display-2,.display-3,.display-4 {
   font-weight: bold;
   color: #31344B;
@@ -39,11 +43,6 @@ input:focus {
 
 ::-webkit-scrollbar-track:hover {
   background-color: #ddd;
-}
-
-/* Navbar */
-.navbar-nav {
-  display: none !important;
 }
 
 /* Loading*/
