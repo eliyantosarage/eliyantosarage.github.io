@@ -10,6 +10,47 @@ h1 {
   font-weight: 700 !important;
 }
 
+textarea {
+  resize: none !important;
+}
+
+textarea:focus {
+  outline: none !important;
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  transition: background 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  transition: background 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-horizontal {
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #888;
+  transition: background-color 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background-color: #555;
+}
+
 .breadcrumb-item::before,
 .breadcrumb-item::after {
   display: none !important;
