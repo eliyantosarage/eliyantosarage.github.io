@@ -625,9 +625,15 @@ mark {
 }
 
 code {
-  font-size: 87.5%;
-  color: #e83e8c;
-  word-break: break-word
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875em;
+  padding: 0.25em 0.5em;
+  border-radius: 6px;
+  background-color: #f3f3f3;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-break: break-word;
+  line-height: 1.5;
 }
 
 a>code {
@@ -6032,7 +6038,7 @@ input[type=submit].btn-block {
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
-  background-image: "Font Awesome 5 Free"
+  background-image: "Font Awesome 5 Pro"
 }
 
 .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before {
@@ -29344,7 +29350,7 @@ a.badge-slack:hover {
 
 .breadcrumb-item+.breadcrumb-item:before {
   content: "\f101";
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Pro";
   font-weight: 900;
   font-size: .625rem;
   color: #66799e
@@ -30299,7 +30305,7 @@ a.badge-slack:hover {
 
 .carousel-control-prev-icon::before {
   content: '\f060';
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Pro";
   font-size: 2rem
 }
 
@@ -30308,7 +30314,7 @@ a.badge-slack:hover {
 }
 
 .carousel-control-next-icon:before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Pro";
   content: "\f061";
   font-size: 2rem
 }
@@ -30343,7 +30349,7 @@ a.badge-slack:hover {
 
 .counter-alternate::after {
   content: '\f067';
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Pro";
   position: absolute;
   font-size: 2.25rem;
   color: #31344b;
@@ -30688,7 +30694,7 @@ textarea[resize=horizontal] {
 
 .form-check .form-check-label::after {
   content: "\f00c";
-  font-family: 'Font Awesome 5 Free';
+  font-family: 'Font Awesome 5 Pro';
   top: 0;
   text-align: center;
   opacity: 0;
