@@ -15,6 +15,23 @@
     <link rel="stylesheet" href="/assets/css/featured.css">
     <link rel="stylesheet" href="/assets/css/neumorphism.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+    <style>
+      .copy-btn {
+      color: #333;
+      display: none;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      transform: scale(0.8);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    
+    #outputText:not(:placeholder-shown)+.copy-btn {
+      display: inline-block;
+      color: #333;
+    }
+    </style>
   </head>
   <body>
     <div class="container p-3 mt-4">
@@ -78,7 +95,10 @@
         </div>
         <div class="mb-3 text-center">
           <label for="outputText" class="form-label"><strong>Hasil:</strong></label>
-          <textarea id="outputText" class="form-control" rows="6" readonly></textarea>
+          <div style="position: relative;">
+            <textarea id="outputText" class="form-control" rows="6" readonly oninput="checkResult()" placeholder="Hasil..."></textarea>
+            <button onclick="copyToClipboard()" class="btn btn-outline-primary copy-btn" title="Copy to Clipboard">Copy</button>
+          </div>
         </div>
       </div>
     </section>
@@ -127,13 +147,24 @@
           "'": '&#039;'
         };
       
-        if (!escapeAmp) delete map['&'];
-        if (!escapeLt) delete map['<'];
-        if (!escapeGt) delete map['>'];
-        if (!escapeQuot) delete map['"'];
-        if (!escapeApos) delete map["'"];
+        const escapedChars = {
+          '&': escapeAmp,
+          '<': escapeLt,
+          '>': escapeGt,
+          '"': escapeQuot,
+          "'": escapeApos
+        };
       
-        const escapedText = text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        let escapedText = '';
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          if (escapedChars[char]) {
+            escapedText += map[char];
+          } else {
+            escapedText += char;
+          }
+        }
+      
         if (addCodeTags) {
           return `<pre class="language-markup"><code>${escapedText}</code></pre>`;
         } else {
@@ -150,18 +181,38 @@
           '&#039;': "'"
         };
       
-        if (!escapeAmp) delete map['&amp;'];
-        if (!escapeLt) delete map['&lt;'];
-        if (!escapeGt) delete map['&gt;'];
-        if (!escapeQuot) delete map['&quot;'];
-        if (!escapeApos) delete map["&#039;"];
+        const unescapedChars = {
+          '&amp;': escapeAmp,
+          '&lt;': escapeLt,
+          '&gt;': escapeGt,
+          '&quot;': escapeQuot,
+          '&#039;': escapeApos
+        };
       
-        const unescapedText = text.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) { return map[m]; });
+        let unescapedText = text;
+        for (const char in unescapedChars) {
+          if (unescapedChars[char]) {
+            const regex = new RegExp(char, 'g');
+            unescapedText = unescapedText.replace(regex, map[char]);
+          }
+        }
+      
         if (addCodeTags) {
           return `<pre class="language-markup"><code>${unescapedText}</code></pre>`;
         } else {
           return unescapedText;
         }
+      }
+      
+      function copyToClipboard() {
+        const output = document.getElementById('outputText');
+        output.select();
+        document.execCommand('copy');
+      }
+      
+      function checkResult() {
+        const output = document.getElementById('outputText');
+        output.classList.add('has-result');
       }
     </script>
   </body>
