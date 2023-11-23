@@ -85,7 +85,9 @@ Di repositori ini, Anda akan menemukan beragam proyek yang mencakup berbagai bid
 ###
 - [<strong>Migrating from GitHub to jsDelivr</strong>](https://eliyantosarage.github.io/migrating-from-github-to-jsdelivr/) : Migrasi dari GitHub ke jsDelivr adalah proses pemindahan sumber daya dan berkas dari GitHub ke jsDelivr untuk meningkatkan kinerja dan kecepatan akses. Proses migrasi ini melibatkan penggantian tautan berkas dari GitHub ke jsDelivr.
 ###
-- [<strong>Instagram Auto Liker with JavaScript</strong>](https://github.com/eliyantosarage/instagram-auto-liker-js) : Alat berbasis JavaScript yang secara otomatis "menyukai" posting Instagram. Tujuannya adalah untuk meningkatkan keterlibatan dan popularitas akun dengan secara otomatis menyukai posting.
+- [<strong>Instagram Auto Liker with JavaScript</strong>](https://github.com/eliyantosarage/instagram-auto-liker-js/) : Alat berbasis JavaScript yang secara otomatis "menyukai" posting Instagram. Tujuannya adalah untuk meningkatkan keterlibatan dan popularitas akun dengan secara otomatis menyukai posting.
+###
+- [<strong>HTML Escape / Unescape</strong>](https://github.com/eliyantosarage/html-escape-unescape/) : Alat untuk mengamankan karakter khusus dalam dokumen HTML atau mengembalikannya ke bentuk aslinya. Ini mencegah karakter seperti <, >, atau & dari diinterpretasikan sebagai kode HTML, memastikan tampilan teks sesuai yang diinginkan.
 
 Anda dapat menjelajahi berbagai proyek ini, membaca lebih lanjut tentang ide di balik mereka, atau bahkan [menghubungi saya](mailto:officialelsa21@gmail.com) untuk pertanyaan, kerja sama, atau komentar. Saya sangat senang mendengar dari Anda.
 
