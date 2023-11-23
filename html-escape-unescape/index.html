@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HTML Escape / Unescape - Eliyanto Sarage</title>
+    <meta name="description" content="Alat untuk mengamankan karakter khusus dalam dokumen HTML atau mengembalikannya ke bentuk aslinya. Ini mencegah karakter seperti <, >, atau & dari diinterpretasikan sebagai kode HTML, memastikan tampilan teks sesuai yang diinginkan.">
+    <meta property="og:title" content="HTML Escape / Unescape - Eliyanto Sarage">
+    <meta property="og:description" content="Alat untuk mengamankan karakter khusus dalam dokumen HTML atau mengembalikannya ke bentuk aslinya. Ini mencegah karakter seperti <, >, atau & dari diinterpretasikan sebagai kode HTML, memastikan tampilan teks sesuai yang diinginkan.">
+    <meta property="og:image" content="https://placehold.co/1200x627/e6e7ee/31344B?font=source-sans-pro&text=HTML+Escape+/+Unescape">
+    <meta property="og:url" content="https://eliyantosarage.github.io/html-escape-unescape/">
+    <link rel="icon" href="/assets/img/logo.png" type="image/png" sizes="any">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/6.4.2_web/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/featured.css">
+    <link rel="stylesheet" href="/assets/css/neumorphism.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+  </head>
+  <body>
+    <div class="container p-3 mt-4">
+      <h1 class="text-center">HTML Escape / Unescape</h1>
+    </div>
+    </header>
+    <div class="container p-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-gray breadcrumb-transparent justify-content-center">
+          <li class="breadcrumb-item">
+            <a href="https://eliyantosarage.github.io/">
+            <i class="fa-duotone fa-house mr-2"></i>
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <i class="fa-solid fa-chevrons-right mr-2"></i>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">HTML Escape / Unescape</li>
+        </ol>
+      </nav>
+    </div>
+    <section class="section section-lg d-flex align-items-center p-3">
+      <div class="container">
+        <div class="mb-3 text-center">
+          <label for="inputText" class="form-label"><strong>Masukkan Teks:</strong></label>
+          <textarea id="inputText" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="addCodeTags">
+              <label class="form-check-label" for="addCodeTags">Bungkus kode <code>&lt;pre class=&quot;language-markup&quot;&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code></label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="escapeAmp" checked>
+              <label class="form-check-label" for="escapeAmp">Konversi <code>&amp;</code> menjadi <code>&amp;amp;</code></label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="escapeLt" checked>
+              <label class="form-check-label" for="escapeLt">Konversi <code>&lt;</code> menjadi <code>&amp;lt;</code></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="escapeGt" checked>
+              <label class="form-check-label" for="escapeGt">Konversi <code>&gt;</code> menjadi <code>&amp;gt;</code></label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="escapeQuot" checked>
+              <label class="form-check-label" for="escapeQuot">Konversi <code>&quot;</code> menjadi <code>&amp;quot;</code></label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="escapeApos" checked>
+              <label class="form-check-label" for="escapeApos">Konversi <code>&#039;</code> menjadi <code>&amp;#039;</code></label>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 text-center">
+          <button onclick="escapeHTML()" class="btn btn-primary mb-2 mr-2">Escape HTML</button>
+          <button onclick="unescapeHTML()" class="btn btn-secondary">Unescape HTML</button>
+        </div>
+        <div class="mb-3 text-center">
+          <label for="outputText" class="form-label"><strong>Hasil:</strong></label>
+          <textarea id="outputText" class="form-control" rows="6" readonly></textarea>
+        </div>
+      </div>
+    </section>
+    <footer class="text-center py-3">
+      <p>Copyright &copy; 2023 <a href="https://eliyantosarage.github.io/">Eliyanto Sarage</a>. All Rights Reserved. </p>
+    </footer>
+    <script src="/assets/js/featured.js"></script>
+    <script src="/assets/js/neumorphism.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script>
+      function escapeHTML() {
+        const input = document.getElementById('inputText').value;
+        const output = document.getElementById('outputText');
+        const addCodeTags = document.getElementById('addCodeTags').checked;
+        const escapeAmp = document.getElementById('escapeAmp').checked;
+        const escapeLt = document.getElementById('escapeLt').checked;
+        const escapeGt = document.getElementById('escapeGt').checked;
+        const escapeQuot = document.getElementById('escapeQuot').checked;
+        const escapeApos = document.getElementById('escapeApos').checked;
+      
+        output.value = escapeHtml(input, addCodeTags, escapeAmp, escapeLt, escapeGt, escapeQuot, escapeApos);
+      }
+      
+      function unescapeHTML() {
+        const input = document.getElementById('inputText').value;
+        const output = document.getElementById('outputText');
+        const addCodeTags = document.getElementById('addCodeTags').checked;
+        const escapeAmp = document.getElementById('escapeAmp').checked;
+        const escapeLt = document.getElementById('escapeLt').checked;
+        const escapeGt = document.getElementById('escapeGt').checked;
+        const escapeQuot = document.getElementById('escapeQuot').checked;
+        const escapeApos = document.getElementById('escapeApos').checked;
+      
+        output.value = unescapeHtml(input, addCodeTags, escapeAmp, escapeLt, escapeGt, escapeQuot, escapeApos);
+      }
+      
+      function escapeHtml(text, addCodeTags, escapeAmp, escapeLt, escapeGt, escapeQuot, escapeApos) {
+        let map = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;'
+        };
+      
+        if (!escapeAmp) delete map['&'];
+        if (!escapeLt) delete map['<'];
+        if (!escapeGt) delete map['>'];
+        if (!escapeQuot) delete map['"'];
+        if (!escapeApos) delete map["'"];
+      
+        const escapedText = text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        if (addCodeTags) {
+          return `<pre class="language-markup"><code>${escapedText}</code></pre>`;
+        } else {
+          return escapedText;
+        }
+      }
+      
+      function unescapeHtml(text, addCodeTags, escapeAmp, escapeLt, escapeGt, escapeQuot, escapeApos) {
+        let map = {
+          '&amp;': '&',
+          '&lt;': '<',
+          '&gt;': '>',
+          '&quot;': '"',
+          '&#039;': "'"
+        };
+      
+        if (!escapeAmp) delete map['&amp;'];
+        if (!escapeLt) delete map['&lt;'];
+        if (!escapeGt) delete map['&gt;'];
+        if (!escapeQuot) delete map['&quot;'];
+        if (!escapeApos) delete map["&#039;"];
+      
+        const unescapedText = text.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) { return map[m]; });
+        if (addCodeTags) {
+          return `<pre class="language-markup"><code>${unescapedText}</code></pre>`;
+        } else {
+          return unescapedText;
+        }
+      }
+    </script>
+  </body>
+</html>
